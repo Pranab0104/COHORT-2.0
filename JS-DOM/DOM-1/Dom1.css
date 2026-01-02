@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font- family: ; */
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  background-image: url(https://i.pinimg.com/1200x/d2/0c/0b/d20c0bbbe50c256a659b20e2a27c3090.jpg);
+  padding: 2%;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.page h1 {
+  font-size: 5em;
+  font-weight: 300;
+  align-items: center;
+  justify-content: center;
+}
+.page .btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  height: 20%;
+  width: 50%;
+  border-radius: 20px;
+  flex-wrap: wrap;
+}
+.page .btns button {
+  text-transform: uppercase;
+  font-family: cursive;
+  background-color: rgb(28, 99, 99);
+  color: rgb(225, 233, 233);
+  font-size: 1.3em;
+  padding: 10px 15px;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 120px;
+  box-shadow: crimson 3px 5px 10px 2px;
+}
+.page .btns:hover {
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.page .btns:hover button:hover {
+  color: crimson;
+  background-color: rgb(7, 6, 6);
+  box-shadow: rgb(132, 127, 128) 3px 8px 10px 3px;
+}/*# sourceMappingURL=Dom1.css.map */
