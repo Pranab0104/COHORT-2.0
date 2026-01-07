@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font- family: ; */
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+main button {
+  padding: 1% 2.4%;
+  background-color: rgb(9, 89, 62);
+  border-radius: 8px;
+  color: aliceblue;
+  position: relative;
+  z-index: 1;
+}
+main button h1 {
+  white-space: nowrap;
+  font-size: 2px;
+}
+main button:active {
+  scale: 1.2;
+}
+main button:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=Dom4.css.map */
