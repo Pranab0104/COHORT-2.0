@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+
+    main {
+      height: 100%;
+      width: 100%;
+      background-color: rgb(194, 193, 198);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .card {
+        // height: 50%;
+        width: 22%;
+        background-color: blanchedalmond;
+        padding: 2%;
+        border-radius: 20px;
+        position: relative;
+
+        div {
+          overflow: hidden;
+          position: relative;
+        }
+
+        img {
+          border-radius: 15px;
+          width: 100%;
+          object-fit: cover;
+          height: 100%;
+        }
+
+        h2 {
+          margin-top: 5%;
+          font-size: 1.4vw;
+          text-align: center;
+        }
+
+        i {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          background: linear-gradient(
+            45deg,
+            rgb(255, 0, 132),
+            rgb(204, 112, 0),
+            rgb(96, 10, 153)
+          );
+          color: transparent;
+          background-clip: text;
+          -webkit-background-clip: text;
+          transform: translate(-50%, -50%) scale(0) rotate(-70deg);
+          transition: all ease-in-out 0.3s;
+          font-size: 6vw;
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
