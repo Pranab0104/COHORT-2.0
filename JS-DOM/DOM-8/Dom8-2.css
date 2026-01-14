@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+html main,
+body main {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  padding: 10% 5%;
+}
+html main .container,
+body main .container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  padding: 1%;
+  background-color: rgba(112, 101, 101, 0.671);
+}
+html main .container h1,
+body main .container h1 {
+  font-size: 3vw;
+  color: antiquewhite;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 300;
+}
+html main .container h2,
+body main .container h2 {
+  font-size: 2.4vw;
+  color: rgb(183, 132, 12);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 300;
+}
+html main .container p,
+body main .container p {
+  font-size: 1.2vw;
+  color: rgb(152, 134, 67);
+  font-family: cursive;
+  font-weight: 300;
+}
+html main .container .wrapper,
+body main .container .wrapper {
+  height: 100%;
+  width: 100%;
+  margin-top: 1%;
+  padding: 0% 0% 1% 0%;
+  display: flex;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: rgb(0, 0, 0);
+  gap: 2px;
+  position: relative;
+  overflow: hidden;
+}
+html main .container .wrapper .white,
+body main .container .wrapper .white {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 10px;
+  z-index: 1;
+  border-bottom: 4px solid rgb(181, 181, 181);
+}
+html main .container .wrapper .white:hover,
+body main .container .wrapper .white:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.633);
+}
+html main .container .wrapper .black,
+body main .container .wrapper .black {
+  position: absolute;
+  top: 0;
+  height: 60%;
+  width: 45px;
+  background-color: black;
+  color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 3;
+  transform: translateX(-50%);
+  border-bottom: 4px solid rgb(90, 87, 87);
+}
+html main .container .wrapper .black:hover,
+body main .container .wrapper .black:hover {
+  cursor: pointer;
+  background-color: rgb(47, 45, 45);
+}/*# sourceMappingURL=Dom8-2.css.map */
