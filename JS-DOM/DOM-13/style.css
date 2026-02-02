@@ -1,0 +1,78 @@
+/*# sourceMappingURL=Style.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: fantasy;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: rgb(208, 199, 199);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 3%;
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+  border-radius: 15px;
+  border: 3px solid white;
+  transition: all 0.3s linear;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.crimson {
+  background-image: url(https://images.pexels.com/photos/34309316/pexels-photo-34309316.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.black {
+  background-image: url(https://images.pexels.com/photos/12266531/pexels-photo-12266531.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.blue {
+  background-image: url(https://images.pexels.com/photos/17855577/pexels-photo-17855577.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+h1 {
+  position: absolute;
+  font-size: 2vw;
+  font-weight: 300;
+  color: rgb(141, 95, 40);
+  text-decoration: underline;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.box:hover h1 {
+  text-shadow: 0 0 10px crimson;
+  opacity: 1;
+}
+
+.box:hover {
+  transform: scale(1.6) !important;
+  box-shadow: 0 0 30px rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+body:has(.box:hover) .box {
+  transform: scale(0.8);
+}
