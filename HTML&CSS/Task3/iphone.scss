@@ -1,0 +1,547 @@
+// =================== Variables ===================
+$font-iphone: "iphone", sans-serif;
+$black: #000;
+$white: #fff;
+$gray-dark: #2c2b2b;
+$orange: darkorange;
+$blue: #0071e3;
+
+// =================== Fonts ===================
+@font-face {
+  font-family: iphone;
+  src: url(./Asst/apple.woff2);
+}
+
+// =================== Global Styles ===================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  background: #2c2a2a;
+}
+
+// =================== Header ===================
+header {
+  height: 5%;
+  background-color: $black;
+  font-size: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2%;
+
+  a {
+    color: $white;
+    font-family: $font-iphone;
+    text-decoration: none;
+    font-weight: 100;
+
+    &:hover {
+      border-bottom: 2px solid $orange;
+    }
+  }
+
+  i {
+    color: $white;
+    font-family: $font-iphone;
+
+    &:hover {
+      cursor: pointer;
+      background: #ece9e9;
+      color: $black;
+      border-radius: 3px;
+    }
+  }
+}
+
+// =================== Section 1 ===================
+.section1 {
+  position: relative;
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: $black;
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .contain {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: $white;
+    font-family: $font-iphone;
+
+    h1 {
+      font-size: 2vw;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+
+    button {
+      background-color: $blue;
+      color: $white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-size: 3vh;
+      font-weight: 500;
+      cursor: pointer;
+      margin-bottom: 3%;
+    }
+  }
+}
+
+// =================== Section 2 ===================
+.section2 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background-color: $gray-dark;
+  color: $white;
+  padding: 2%;
+
+  .top {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    background-color: transparent;
+
+    h1 {
+      font-size: 8vh;
+      font-family: $font-iphone;
+      font-weight: 600;
+    }
+
+    h3 {
+      font-size: 3vh;
+      font-family: $font-iphone;
+      font-weight: 500;
+      color: #267acd;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #5ca9ff;
+      }
+    }
+
+    i {
+      font-size: 3vh;
+    }
+  }
+
+  .bot {
+    width: 90%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: auto;
+    gap: 5%;
+
+    video,
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      display: block;
+    }
+
+    div {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      flex-shrink: 0;
+      border-radius: 20px;
+      overflow: hidden;
+
+      h2 {
+        position: absolute;
+        top: 4%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $white;
+        font-family: $font-iphone;
+        font-size: 4vh;
+        font-weight: 600;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.4);
+        padding: 12px 20px;
+        border-radius: 12px;
+        backdrop-filter: blur(6px);
+        z-index: 2;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      background-color: rgb(227, 221, 222);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(246, 119, 1);
+      border-radius: 10px;
+
+      &:hover {
+        background-color: rgb(246, 119, 1);
+        border: 2px solid $black;
+      }
+    }
+  }
+}
+
+// =================== Section 3 ===================
+.section3 {
+  height: 100vh;
+  width: 100%;
+  background-color: $black;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  .contain {
+    margin-top: 2%;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    gap: 2%;
+
+    .hero1 {
+      h3 {
+        font-size: 4vh;
+        color: $orange;
+        font-family: $font-iphone;
+      }
+    }
+
+    .hero2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        width: 56%;
+        font-size: 8vh;
+        color: $white;
+        font-family: $font-iphone;
+      }
+    }
+
+    .hero3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        width: 62%;
+        font-size: 3vh;
+        color: rgb(178, 170, 170);
+        font-family: $font-iphone;
+      }
+    }
+
+    .hero4 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+
+      video {
+        height: 78%;
+        width: 60%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+// =================== Section 4 ===================
+.section4 {
+  margin-top: 0%;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background-color: $gray-dark;
+  color: $white;
+  padding: 2%;
+
+  .top {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 8vh;
+      font-family: $font-iphone;
+      font-weight: 600;
+    }
+  }
+
+  .bot {
+    width: 80%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    #vid1 {
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+  }
+
+  .feature-list {
+    position: absolute;
+    top: 12%;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    list-style: none;
+    z-index: 2;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(20, 20, 20, 0.9);
+      color: $white;
+      font-family: $font-iphone;
+      font-size: 2.5vh;
+      font-weight: 600;
+      padding: 10px 25px;
+      border-radius: 50px;
+      backdrop-filter: blur(8px);
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateX(5px);
+      }
+
+      &.active {
+        background: rgba(255, 255, 255, 0.1);
+
+        .icon {
+          background: #ff6600;
+          border: none;
+        }
+      }
+
+      .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: transparent;
+        border: 2px solid $white;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// =================== Section 5 ===================
+.section5 {
+  font-family: $font-iphone;
+  height: 100%;
+  width: 100%;
+  background-color: $black;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  h4 {
+    font-size: 5vh;
+    color: #ff7f00;
+    width: 100%;
+    height: 8vh;
+  }
+
+  h1 {
+    font-size: 9vh;
+    color: #ece9e9;
+    width: 100%;
+    height: 15vh;
+  }
+
+  .down {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+
+    .bottom1 {
+      flex: 1;
+      overflow: hidden;
+      border-radius: 12px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .bottom2 {
+      flex: 0.6;
+      min-width: 250px;
+      text-align: left;
+      margin-left: 10%;
+
+      h2 {
+        color: #ff7f00;
+        font-size: 48px;
+        margin: 5px 0;
+      }
+
+      h5 {
+        color: #bbb;
+        font-size: 18px;
+        margin: 5px 0;
+      }
+    }
+  }
+}
+
+// =================== Section 6 ===================
+.section6 {
+  width: 100%;
+  background-color: $black;
+  color: #8d8b8b;
+  text-align: center;
+  display: flex;
+  padding: 6%;
+  align-items: center;
+  justify-content: center;
+
+  .box {
+    height: 100vh;
+    width: 72%;
+
+    p {
+      margin-top: 8vh;
+      font-size: 2.9vh;
+      font-family: $font-iphone;
+
+      span {
+        color: $white;
+      }
+    }
+
+    .innerbox {
+      margin-top: 6%;
+      height: 60%;
+      width: 70%;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-left: 10%;
+
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 15px;
+      }
+    }
+  }
+}
+
+// =================== Section 7 ===================
+.section7 {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: $black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .dabba {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  h3 {
+    position: relative;
+    z-index: 2;
+    color: rgb(138, 133, 133);
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: $font-iphone;
+    text-align: center;
+    line-height: 1.4;
+
+    span {
+      color: $white;
+    }
+  }
+}
