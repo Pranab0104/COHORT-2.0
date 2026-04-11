@@ -43,3 +43,21 @@
 // ---
 
 // Optional: combine both scenarios into a small dashboard that fetches weather and then attempts to send a report-email, demonstrating error handling across both network and simulated async operations.
+
+//Problem 1 begins......
+
+// let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`;
+
+function getWeather(city) {
+  let apikey = `e96047fb627e53cae3c7302d7ee731a0`;
+
+  fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`,
+  ).then(raw => raw.json())
+  .then((result) =>{
+    console.log(result);
+    
+  })
+}
+
+getWeather("Chandrapur")
