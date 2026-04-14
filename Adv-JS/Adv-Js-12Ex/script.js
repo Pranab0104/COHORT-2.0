@@ -48,31 +48,108 @@
 
 // let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`;
 
+//My code for the console only...
+// async function getWeather(city) {
+//   try {
+//     let apikey = `e96047fb627e53cae3c7302d7ee731a0`;
+
+//     let raw = await fetch(
+//       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`,
+//     );
+
+//     if (!raw.ok) {
+//       throw new Error("Something went wrong... City not Found!");
+//     }
+
+//     let realdata = await raw.json();
+//     if (realdata.main.temp <= 15) {
+//       console.warn(`It's Cold Out there... ${realdata.main.temp}°C 🥶`);
+//     } else if (realdata.main.temp >= 35) {
+//       console.warn(`It's Hot Out there... ${realdata.main.temp}°C 🥵`);
+//     } else {
+//       console.log(`Weather is Normal... ${realdata.main.temp}°C 🙂`);
+//     }
+
+//     // console.log(raw);
+//   } catch (err) {
+//     console.log(err.message);
+//   }
+// }
+
+// getWeather("Dudinka");
+
+
+//full code for the UI...
+class ExtremeTemperatureError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "ExtremeTemperatureError";
+  }
+}
+
+const cityInput = document.getElementById("cityInput");
+const searchBtn = document.getElementById("searchBtn");
+const weatherCard = document.getElementById("weatherCard");
+const cityName = document.getElementById("cityName");
+const temperature = document.getElementById("temperature");
+const condition = document.getElementById("condition");
+const errorBox = document.getElementById("errorBox");
+
 async function getWeather(city) {
   try {
     let apikey = `e96047fb627e53cae3c7302d7ee731a0`;
 
     let raw = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`,
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`
     );
 
     if (!raw.ok) {
-      throw new Error("Something went wrong... City not Found!");
+      throw new Error(" Enter a Valid City name OR City not Found!");
     }
 
     let realdata = await raw.json();
-    if (realdata.main.temp <= 15) {
-      console.warn(`It's Cold Out there... ${realdata.main.temp}°C 🥶`);
-    } else if (realdata.main.temp >= 35) {
-      console.warn(`It's Hot Out there... ${realdata.main.temp}°C 🥵`);
-    } else {
-      console.log(`Weather is Normal... ${realdata.main.temp}°C 🙂`);
+    let temp = realdata.main.temp;
+
+    // Custom Extreme Temperature Error
+    if (temp <= 0) {
+      throw new ExtremeTemperatureError(
+        `Extreme Cold Alert ❄ ${temp}°C`
+      );
+    } else if (temp >= 45) {
+      throw new ExtremeTemperatureError(
+        `Extreme Heat Alert 🔥 ${temp}°C`
+      );
     }
 
-    // console.log(raw);
+    // Normal Conditions Handling
+    weatherCard.classList.remove("hidden");
+    errorBox.classList.add("hidden");
+
+    cityName.textContent = realdata.name;
+    temperature.textContent = `${temp}°C`;
+
+    if (temp <= 15) {
+      condition.textContent = "It's so Cold Out there 🥶";
+    } else if (temp >= 35) {
+      condition.textContent = "It's too Hot Out there 🥵";
+    } else {
+      condition.textContent = "Weather is Normal 😁";
+    }
+
   } catch (err) {
-    console.log(err.message);
+    weatherCard.classList.add("hidden");
+    errorBox.classList.remove("hidden");
+    errorBox.textContent = err.message;
   }
 }
 
-getWeather("Dudinka");
+searchBtn.addEventListener("click", () => {
+  const city = cityInput.value.trim();
+  if (!city) {
+    errorBox.classList.remove("hidden");
+    errorBox.textContent = "Please enter a city name!";
+    weatherCard.classList.add("hidden");
+    return;
+  }
+  getWeather(city);
+});

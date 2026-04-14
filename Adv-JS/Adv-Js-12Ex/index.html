@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJS-12</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    helleeoooo
-    <script src="script.js"></script>
+
+  <div class="container">
+    <h1>🌤 Atmosphere Panel</h1>
+
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Please enter city the name..." />
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <div class="card hidden" id="weatherCard">
+      <h2 id="cityName"></h2>
+      <p class="temp" id="temperature"></p>
+      <p id="condition"></p>
+    </div>
+
+    <div class="error hidden" id="errorBox"></div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
