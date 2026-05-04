@@ -26,11 +26,11 @@ body main {
 body main .icons {
   display: grid;
   grid-auto-flow: column;
-  grid-template-rows: repeat(auto-fill, 110px);
+  grid-template-rows: repeat(auto-fill, 100px);
   gap: 2px;
-  height: 100vh;
   align-content: start;
   margin-top: 1%;
+  height: calc(100vh - 60px);
 }
 body main .icon {
   width: 90px;
@@ -61,4 +61,34 @@ body main .icon:hover {
 }
 body main .icon:active {
   background: rgba(255, 255, 255, 0.25);
+}
+body main .taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body main .box {
+  border: 2px solid white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+body main .box:nth-child(1) {
+  flex: 1;
+  justify-content: flex-start;
+}
+body main .box:nth-child(2) {
+  flex: 1;
+  justify-content: center;
+}
+body main .box:nth-child(3) {
+  flex: 1;
+  justify-content: flex-end;
 }/*# sourceMappingURL=style.css.map */

@@ -31,19 +31,19 @@ body {
   main {
     height: 100vh;
     border-radius: 20px;
-    // border: 4px solid white; 
+    // border: 4px solid white;
     overflow: hidden;
     // padding: 2% 2%;
     margin: 0% 0%;
 
     .icons {
       display: grid;
-      grid-auto-flow:column;
-      grid-template-rows: repeat(auto-fill, 110px);
+      grid-auto-flow: column;
+      grid-template-rows: repeat(auto-fill, 100px);
       gap: 2px;
-      height: 100vh;
-      align-content:start;
+      align-content: start;
       margin-top: 1%;
+      height: calc(100vh - 60px);
       // padding: 20px;
       // border: 2px solid white;
       // padding: 20px;
@@ -81,6 +81,42 @@ body {
 
     .icon:active {
       background: rgba(255, 255, 255, 0.25);
+    }
+
+    .taskbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      // padding: 0 0px;
+    }
+
+    .box {
+      border: 2px solid white;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .box:nth-child(1){
+      flex: 1;
+      justify-content: flex-start;
+    }
+
+    .box:nth-child(2){
+      flex: 1;
+      justify-content: center;
+    }
+
+    .box:nth-child(3){
+      flex: 1;
+      justify-content: flex-end;
     }
   }
 }
