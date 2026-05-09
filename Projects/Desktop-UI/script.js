@@ -60,16 +60,36 @@ function desktoprefresh() {
     if (!action) return;
 
     switch (action) {
+      case "View":
+        alert("View the system");
+        break;
+
+      case "Sort By":
+        alert("Sort the app's as per choice");
+        break;
+
       case "refresh":
         location.reload();
         break;
 
-      case "newFolder":
+      case "Undo delete":
         alert("New Folder Created");
+        break;
+
+      case "Display settings":
+        alert("Set the display occurance");
+        break;
+
+      case "Open in Terminal":
+        alert("Open the Terminal");
         break;
 
       case "personalize":
         alert("Open personalization settings");
+        break;
+        
+      case "Show more options":
+        alert("shows more options for the better view");
         break;
     }
 
@@ -91,11 +111,11 @@ function doubleClick() {
   });
 }
 
-function doubleClick() {
+function click() {
   const icons = document.querySelectorAll(".task-icon");
 
   icons.forEach((icon) => {
-    icon.addEventListener("dblclick", function () {
+    icon.addEventListener("click", function () {
       const url = this.getAttribute("data-url");
 
       if (url) {
@@ -105,6 +125,29 @@ function doubleClick() {
   });
 }
 
+function someApp() {
+  const icons = document.querySelectorAll(".icon");
+
+  icons.forEach((icon) => {
+    icon.addEventListener("dblclick", () => {
+      const windowId = icon.getAttribute("data-window");
+      const windowElement = document.getElementById(windowId);
+
+      if (windowElement) {
+        windowElement.style.display = "block";
+      }
+    });
+  });
+
+  const closeBtn = document.querySelector(".close-btn");
+
+  closeBtn.addEventListener("click", () => {
+    document.getElementById("thisPCWindow").style.display = "none";
+  });
+}
+
 updateClock();
 desktoprefresh();
 doubleClick();
+click();
+someApp();

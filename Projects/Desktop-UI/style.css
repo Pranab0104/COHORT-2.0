@@ -152,5 +152,99 @@ body main {
   /* Right side */
 }
 body main .right {
-  justify-content: flex-end;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+body main .last-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+body main .last-icons img {
+  height: 30px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 5px;
+  transition: 0.2s ease;
+}
+body main .last-icons img:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+body main .last-icons h3 {
+  font-size: medium;
+  font-weight: 100;
+}
+body main .clock {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  font-size: medium;
+  font-weight: 200;
+  letter-spacing: normal;
+  cursor: pointer;
+  padding: 2px 5px;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+body main .clock:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+body main .context-menu {
+  position: absolute;
+  width: 180px;
+  background: #1f1f1f;
+  border-radius: 8px;
+  display: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+body main .context-menu ul {
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+}
+body main .context-menu li {
+  padding: 10px 15px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+body main .context-menu li:hover {
+  background: #333;
+}
+body main .window {
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  background: #1f1f1f;
+  border-radius: 10px;
+  display: none;
+  top: 100px;
+  left: 200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+body main .title-bar {
+  height: 40px;
+  background: #2b2b2b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  cursor: move;
+  color: white;
+}
+body main .close-btn {
+  background: red;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+body main .window-content {
+  padding: 15px;
+  color: white;
 }/*# sourceMappingURL=style.css.map */

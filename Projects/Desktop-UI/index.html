@@ -8,88 +8,130 @@
   </head>
   <body>
     <main>
-      <div class="container">
-        <div class="icons">
-          <div class="icon">
-            <img src="assets/icons/pc.png" class="icon-img" />
-            <span class="icon-text">This PC</span>
-          </div>
+      <div id="desktop-area">
+        <div class="container">
+          <div class="icons">
+            <div class="icon" data-window="thisPCWindow">
+              <img src="assets/icons/pc.png" class="icon-img" />
+              <span class="icon-text">This PC</span>
+            </div>
 
-          <div class="icon">
-            <img src="assets/icons/network.png" class="icon-img" />
-            <span class="icon-text">Network</span>
-          </div>
+            <div class="icon" data-window="netwokWindow">
+              <img src="assets/icons/network.png" class="icon-img" />
+              <span class="icon-text">Network</span>
+            </div>
 
-          <div class="icon">
-            <img src="assets/icons/recycle-bin.png" class="icon-img" />
-            <span class="icon-text">Recycle Bin</span>
-          </div>
+            <div class="icon" data-window="recycle-binWindow">
+              <img src="assets/icons/recycle-bin.png" class="icon-img" />
+              <span class="icon-text">Recycle Bin</span>
+            </div>
 
-          <div class="icon">
-            <img src="assets/icons/control-panel.png" class="icon-img" />
-            <span class="icon-text">Control Panel</span>
-          </div>
+            <div class="icon" data-window="control-panelWindow">
+              <img src="assets/icons/control-panel.png" class="icon-img" />
+              <span class="icon-text">Control Panel</span>
+            </div>
 
-          <div class="icon">
-            <img src="assets/icons/chrome.png" class="icon-img" />
-            <span class="icon-text">Chrome</span>
-          </div>
+            <div class="icon" data-url="https://chrome.com">
+              <img src="assets/icons/chrome.png" class="icon-img" />
+              <span class="icon-text">Chrome</span>
+            </div>
 
-          <div class="icon">
-            <img src="assets/icons/edge.png" class="icon-img" />
-            <span class="icon-text">Edge</span>
-          </div>
+            <div
+              class="icon"
+              data-url="https://microsoft-edge.en.softonic.com/"
+            >
+              <img src="assets/icons/edge.png" class="icon-img" />
+              <span class="icon-text">Edge</span>
+            </div>
 
-          <div class="icon">
-            <img src="assets/icons/brave.png" class="icon-img" />
-            <span class="icon-text">Brave</span>
-          </div>
+            <div class="icon" data-url="https://brave.com">
+              <img src="assets/icons/brave.png" class="icon-img" />
+              <span class="icon-text">Brave</span>
+            </div>
 
-          <div class="icon">
-            <img src="assets/icons/vscode.png" class="icon-img" />
-            <span class="icon-text">VS Code</span>
-          </div>
+            <div class="icon" data-url="https://code.visualstudio.com/">
+              <img src="assets/icons/vscode.png" class="icon-img" />
+              <span class="icon-text">VS Code</span>
+            </div>
 
-          <!-- <div class="icon">
+            <!-- <div class="icon">
             <img src="assets/icons/chatgpt.png" class="icon-img" />
             <span class="icon-text">ChatGPT</span>
           </div> -->
-        </div>
-
-        <div class="taskbar">
-          <div class="box weather">
-            <img src="assets/icons/weather.png" alt="" />
-            <span>40°C Mostly Sunny</span>
           </div>
 
-          <div class="search-area">
-            <div class="box search">
-              <img src="assets/icons/windows.png" class="start-icon" />
+          <div class="taskbar">
+            <div class="box weather">
+              <img src="assets/icons/weather.png" alt="" />
+              <span>40°C Mostly Sunny</span>
+            </div>
+            <div class="search-area">
+              <div class="box search">
+                <img src="assets/icons/windows.png" class="start-icon" />
 
-              <div class="search-box">
-                <img src="assets/icons/search.png" class="search-icon" />
-                <input type="search" placeholder="Search here..." />
+                <div class="search-box">
+                  <img src="assets/icons/search.png" class="search-icon" />
+                  <input type="search" placeholder="Search here..." />
+                </div>
+
+                <div class="task-icon" data-window="folderWindow">
+                  <img src="assets/icons/folder.png" alt="" />
+                </div>
+                <div class="task-icon" data-url="https://web.whatsapp.com/">
+                  <img src="assets/icons/what'sapp.png" alt="" />
+                </div>
+                <div class="task-icon" data-window="settingWindow">
+                  <img src="assets/icons/setting.png" alt="" />
+                </div>
+                <div
+                  class="task-icon"
+                  data-url="https://www.dell.com/support/home/en-in/drivers/driversdetails?driverid=00wmc"
+                >
+                  <img src="assets/icons/alienware.png" alt="" />
+                </div>
+                <div class="task-icon" data-url="https://chatgpt.com/">
+                  <img src="assets/icons/chatgpt.png" alt="" />
+                </div>
+              </div>
+            </div>
+
+            <div class="box right">
+              <div class="last-icons">
+                <img src="assets/icons/arrow.png" />
+                <img src="assets/icons/clouds.png" />
+                <h3>ENG-IN</h3>
               </div>
 
-              <div class="task-icon">
-                <img src="assets/icons/folder.png" alt="" />
+              <div class="last-icons">
+                <img src="assets/icons/wifi.png" />
+                <img src="assets/icons/volume.png" />
               </div>
-              <div class="task-icon">
-                <img src="assets/icons/what'sapp.png" alt="" />
-              </div>
-              <div class="task-icon">
-                <img src="assets/icons/setting.png" alt="" />
-              </div>
-              <div class="task-icon">
-                <img src="assets/icons/alienware.png" alt="" />
-              </div>
-              <div class="task-icon">
-                <img src="assets/icons/chatgpt.png" alt="" />
+
+              <div class="clock">
+                <span id="time"></span>
+                <span id="date"></span>
               </div>
             </div>
           </div>
 
-          <div class="box right"></div>
+          <div id="contextMenu" class="context-menu">
+            <ul>
+              <li data-action="refresh">Refresh</li>
+              <li data-action="newFolder">New Folder</li>
+              <li data-action="personalize">Personalize</li>
+            </ul>
+          </div>
+
+          <div class="window" id="thisPCWindow">
+            <div class="title-bar">
+              <span>This PC</span>
+              <button class="close-btn">✖</button>
+            </div>
+            <div class="window-content">
+              <p>C Drive</p>
+              <p>D Drive</p>
+            </div>
+          </div>
         </div>
       </div>
     </main>
