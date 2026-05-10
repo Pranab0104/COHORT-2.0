@@ -55,41 +55,41 @@ function desktoprefresh() {
 
   // Menu click to perform actions
   contextMenu.addEventListener("click", function (e) {
-    const action = e.target.getAttribute("data-action");
+    const action = e.target.dataset.action;
 
     if (!action) return;
 
     switch (action) {
-      case "View":
+      case "view":
         alert("View the system");
         break;
 
-      case "Sort By":
-        alert("Sort the app's as per choice");
+      case "sortBy":
+        alert("Sort the apps as per choice");
         break;
 
       case "refresh":
         location.reload();
         break;
 
-      case "Undo delete":
-        alert("New Folder Created");
+      case "undoDelete":
+        alert("Undo delete action");
         break;
 
-      case "Display settings":
-        alert("Set the display occurance");
+      case "displaySettings":
+        alert("Set display appearance");
         break;
 
-      case "Open in Terminal":
+      case "openTerminal":
         alert("Open the Terminal");
         break;
 
       case "personalize":
         alert("Open personalization settings");
         break;
-        
-      case "Show more options":
-        alert("shows more options for the better view");
+
+      case "showMore":
+        alert("Showing more options");
         break;
     }
 
