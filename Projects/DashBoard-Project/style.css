@@ -1,0 +1,53 @@
+:root {
+  --primary:#F1E2D1;
+  --sec:#DCC3AA;
+  ---tri: #541A1A;
+  --font: #810B38;
+}
+
+@font-face {
+  font-family: light;
+  src: url(./assets/fonts/AeonikTRIAL-Light.otf);
+}
+@font-face {
+  font-family: italic;
+  src: url(./assets/fonts/AeonikTRIAL-RegularItalic.otf);
+}
+@font-face {
+  font-family: normal;
+  src: url(./assets/fonts/AeonikTRIAL-Regular.otf);
+}
+@font-face {
+  font-family: hand;
+  src: url(./assets/fonts/handwrite.otf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: beige;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#main {
+  height: 100%;
+  width: 100%;
+  background-color: var(--sec);
+}
+
+h1 {
+  font-family: hand;
+  color: var(---tri);
+  font-size: 10vh;
+  font-weight: 200;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: var(--primary);
+  text-transform: uppercase;
+  text-decoration: underline;
+}/*# sourceMappingURL=style.css.map */
