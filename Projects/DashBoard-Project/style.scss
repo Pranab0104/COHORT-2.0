@@ -1,57 +1,90 @@
-:root{
-    --primary:#F1E2D1;
-    --sec:#DCC3AA;
-    ---tri: #541A1A;
-    --font: #810B38;
+:root {
+  --primary: #f1e2d1;
+  --sec: #dcc3aa;
+  --tri: #541a1a;
+  --font: #810b38;
 }
 
 @font-face {
-    font-family: light;
-    src: url(./assets/fonts/AeonikTRIAL-Light.otf);
+  font-family: light;
+  src: url(./assets/fonts/AeonikTRIAL-Light.otf);
 }
 
 @font-face {
-    font-family: italic;
-    src: url(./assets/fonts/AeonikTRIAL-RegularItalic.otf);
+  font-family: italic;
+  src: url(./assets/fonts/AeonikTRIAL-RegularItalic.otf);
 }
 
 @font-face {
-    font-family: normal;
-    src: url(./assets/fonts/AeonikTRIAL-Regular.otf);
+  font-family: normal;
+  src: url(./assets/fonts/AeonikTRIAL-Regular.otf);
 }
 
 @font-face {
-    font-family: hand;
-    src: url(./assets/fonts/handwrite.otf);
+  font-family: hand;
+  src: url(./assets/fonts/handwrite.otf);
 }
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-color: beige;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: beige;
 }
 
-html,body{
-height: 100%;
-width: 100%;
+html,
+body {
+  height: 100%;
+  width: 100%;
 }
 
-#main{
-    height: 100%;
-    width: 100%;
-    background-color: var(--sec);
+#main {
+  height: 100%;
+  width: 100%;
+  background-color: var(--sec);
 }
 
-h1{
-    font-family: hand;
-    color: var(---tri);
-    font-size: 10vh;
-    font-weight: 200;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    background-color: var(--primary);
-    text-transform: uppercase;
-    text-decoration:underline
+h1 {
+  font-family: hand;
+  color: var(--tri);
+  font-size: 10vh;
+  font-weight: 200;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: var(--primary);
+  text-transform: uppercase;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  // background-color: #810B38;
+}
+
+section.allelem {
+  height: 100%;
+  width: 100%;
+  padding: 2.5%;
+  background-color: var(--sec);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2%;
+}
+
+.elem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40%;
+  width: 18%;
+  background-color: var(--font);
+  padding: 0.6% 1.5%;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 5vh;
+  border-radius: 10px;
+  text-decoration: underline;
 }
