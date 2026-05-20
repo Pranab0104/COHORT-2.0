@@ -52,12 +52,6 @@ h1 {
   text-transform: uppercase;
 }
 
-nav {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-}
-
 section.allelem {
   height: 100%;
   width: 100%;
@@ -76,10 +70,34 @@ section.allelem {
   height: 40%;
   width: 18%;
   background-color: var(--font);
-  padding: 0.6% 1.5%;
+  overflow: hidden;
   font-style: normal;
   font-weight: 500;
   font-size: 5vh;
   border-radius: 10px;
+  transition: all ease 0.23s;
+}
+
+.elem:active {
+  scale: 0.8;
+}
+
+.elem:hover {
+  background-color: var(--primary);
+  cursor: pointer;
   text-decoration: underline;
+  font-style: hand;
+  font-size: 4vh;
+  transform: scale(1.05);
+  box-shadow: 10px 20px 20px black;
+  font-family: hand;
+  color: var(--tri);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.elem img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=style.css.map */
