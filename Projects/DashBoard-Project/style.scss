@@ -79,35 +79,78 @@ section.allelem {
   justify-content: center;
   height: 40%;
   width: 18%;
+  position: relative;
   background-color: var(--font);
   overflow: hidden;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 5vh;
+  // font-style: normal;
+  // font-weight: 500;
+  // font-size: 5vh;
   border-radius: 10px;
   // text-decoration: underline;
   transition: all ease 0.23s;
 }
 
-.elem:active{
+.elem:active {
   scale: 0.8;
 }
 
-.elem:hover{
+.elem:hover {
   background-color: var(--primary);
   cursor: pointer;
-  text-decoration: underline;
-  font-style: hand;
-  font-size: 4vh;
   transform: scale(1.05);
   box-shadow: 10px 20px 20px black;
+  // text-decoration: underline;
+  // font-size: 4vh;
   font-family: hand;
-  color: var(--tri);
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  // color: var(--tri);
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
 }
 
-.elem img{
+.elem img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+
+  &:hover {
+    filter: blur(10px);
+  }
+}
+
+.elem h2 {
+  position: absolute;
+  left: 10%;
+  top: 85%;
+  color: var(--font);
+}
+
+.fullelem {
+  min-height: 100vh;
+  width: 100%;
+  padding: 3%;
+  background-color: var(--primary);
+  box-sizing: border-box;
+}
+
+.fullelem .line{
+  background-color: var(--font);
+  padding: 2%;
+  height: 100%;
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px black;
+}
+
+.fullelem h3 {
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4vh;
+  font-family: hand;
+  text-transform: capitalize;
+  font-weight: 200;
+  text-shadow: 0px 2px 6px #dcc3aa;
 }
