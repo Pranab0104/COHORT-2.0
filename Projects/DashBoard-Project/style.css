@@ -21,6 +21,10 @@
   font-family: hand;
   src: url(./assets/fonts/handwrite.otf);
 }
+@font-face {
+  font-family: Petemoss;
+  src: url(./assets/fonts/Petemoss.ttf);
+}
 * {
   margin: 0;
   padding: 0;
@@ -50,6 +54,8 @@ h1 {
   display: flex;
   background-color: var(--primary);
   text-transform: uppercase;
+  text-shadow: 0px 12px 8px crimson;
+  border-bottom: 5px solid black;
 }
 
 section.allelem {
@@ -61,6 +67,7 @@ section.allelem {
   flex-wrap: wrap;
   align-items: flex-start;
   gap: 2%;
+  position: absolute;
 }
 
 .elem {
@@ -109,7 +116,9 @@ section.allelem {
 .fullelem {
   min-height: 100vh;
   width: 100%;
-  padding: 3%;
+  padding: 2%;
+  display: none;
+  position: absolute;
   background-color: var(--primary);
   box-sizing: border-box;
 }
@@ -117,10 +126,13 @@ section.allelem {
 .fullelem .line {
   background-color: var(--font);
   padding: 2%;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
+  overflow: hidden;
   border: 2px solid black;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
   box-shadow: 0px 10px 20px black;
 }
 
@@ -130,8 +142,68 @@ section.allelem {
   align-items: center;
   justify-content: center;
   font-size: 4vh;
+  letter-spacing: 1px;
   font-family: hand;
   text-transform: capitalize;
   font-weight: 200;
-  text-shadow: 0px 2px 6px #dcc3aa;
+  text-shadow: 0px 2px 4px #000000;
+}
+
+.back {
+  position: absolute;
+  right: 4%;
+  border: 2px solid var(--sec);
+  background-color: var(--primary);
+  border-radius: 10px;
+  font-size: 1.8vh;
+  font-family: normal;
+  font-weight: 100;
+  padding: 1%;
+  letter-spacing: 1.3px;
+  color: var(--font);
+  text-shadow: 1px 1px #000000;
+  box-shadow: 3px 2px 3px black;
+}
+.back:hover {
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-size: 2vh;
+  background-color: #000000;
+  color: var(--sec);
+  transition: all ease 0.4s;
+  box-shadow: 3px 2px 3px rgb(170, 143, 143);
+}
+
+.back:active {
+  scale: 0.9;
+}
+
+.todo-page {
+  display: block;
+}
+
+.todo-page .todo-container {
+  min-height: 70vh;
+  width: 100%;
+  display: flex;
+  gap: 2%;
+  margin-top: 5%;
+  box-sizing: border-box;
+  background-color: var(--font);
+}
+
+.todo-page .todo-container .addTask {
+  flex: 4;
+  border: 3px solid black;
+  box-shadow: 5px 13px 15px rgb(0, 0, 0);
+  border-radius: 15px;
+  background-color: var(--primary);
+}
+
+.todo-page .todo-container .allTask {
+  border-radius: 15px;
+  border: 3px solid black;
+  box-shadow: 5px 13px 15px rgb(0, 0, 0);
+  flex: 6;
+  background-color: var(--sec);
 }/*# sourceMappingURL=style.css.map */
