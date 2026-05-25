@@ -200,10 +200,117 @@ section.allelem {
   background-color: var(--primary);
 }
 
+.todo-page .todo-container .addTask form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2%;
+  gap: 2%;
+}
+
+.todo-container .addTask form input {
+  padding: 2% 3%;
+  font-size: 2.6vh;
+  font-family: normal;
+  border: none;
+  margin: 3% 0%;
+  border-radius: 15px;
+  background-color: black;
+  color: var(--primary);
+  font-weight: 500;
+  outline: none;
+  width: 100%;
+  box-shadow: 3px 5px 10px rgb(157, 45, 45);
+}
+
+.todo-container .addTask form textarea {
+  padding: 2% 3%;
+  font-size: 3vh;
+  font-family: normal;
+  border: none;
+  margin: 3% 0%;
+  border-radius: 15px;
+  background-color: var(--font);
+  color: var(--sec);
+  font-weight: 500;
+  outline: none;
+  width: 100%;
+  box-shadow: 3px 8px 10px black;
+}
+
+.todo-container .addTask form button {
+  border: 2px solid var(--sec);
+  background-color: var(--primary);
+  border-radius: 10px;
+  font-size: 1.8vh;
+  font-family: normal;
+  width: 100%;
+  font-weight: 100;
+  padding: 2% 3%;
+  margin: 3% 0%;
+  letter-spacing: 1.3px;
+  color: var(--font);
+  text-shadow: 1px 1px #000000;
+  box-shadow: 3px 2px 3px black;
+}
+.todo-container .addTask form button:hover {
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-size: 2vh;
+  background-color: #000000;
+  color: var(--sec);
+  transition: all ease 0.4s;
+  box-shadow: 3px 2px 3px rgb(170, 143, 143);
+}
+
 .todo-page .todo-container .allTask {
   border-radius: 15px;
   border: 3px solid black;
   box-shadow: 5px 13px 15px rgb(0, 0, 0);
   flex: 6;
+  overflow: auto;
+  padding: 1% 2%;
   background-color: var(--sec);
+}
+
+.task {
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 3%;
+  color: var(--primary);
+  margin: 2% 0%;
+  background-color: var(--font);
+}
+
+.task h5 {
+  font-family: italic;
+  font-size: 3.2vh;
+  font-weight: 100;
+}
+
+.task button {
+  font-family: light;
+  font-size: 2vh;
+  font-weight: 100;
+  background-color: var(--primary);
+  color: #000000;
+  padding: 1%;
+  letter-spacing: 1.5px;
+  border-radius: 15px 0px;
+}
+.task button:hover {
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-size: 2vh;
+  background-color: #000000;
+  color: var(--sec);
+  transition: all ease 0.4s;
+  box-shadow: 3px 2px 3px rgb(170, 143, 143);
+}
+
+.task button:active {
+  scale: 0.8;
 }/*# sourceMappingURL=style.css.map */
