@@ -59,7 +59,7 @@ h1 {
   display: flex;
   background-color: var(--primary);
   text-transform: uppercase;
-  text-shadow: 0px 12px 8px crimson;
+  text-shadow: 0px 12px 8px rgb(103, 74, 79);
   border-bottom: 5px solid black;
 }
 
@@ -229,7 +229,7 @@ section.allelem {
   gap: 2%;
 }
 
-.todo-container .addTask form input {
+.todo-container .addTask form input#tk{
   padding: 2% 3%;
   font-size: 2.6vh;
   font-family: normal;
@@ -308,9 +308,30 @@ section.allelem {
 }
 
 .task h5 {
-  font-family: italic;
-  font-size: 3.2vh;
+  font-family: light;
+  font-size: 3vh;
   font-weight: 100;
+  gap: 1%;
+  display: flex;
+  align-items: center;
+}
+
+.task h5 span{
+  font-family: italic;
+  font-size: 2vh;
+  font-weight: 900;
+  color: var(--font);
+  border-radius: 10px;
+  padding: 1.4%;
+  background-color: var(--sec);
+}
+
+.task h5 span.true{
+  opacity: 1;
+}
+
+.task h5 span.false{
+  opacity: 0;
 }
 
 .task button {
@@ -336,4 +357,22 @@ section.allelem {
 
 .task button:active {
   scale: 0.8;
+}
+
+form .mark{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1%;
+  margin-bottom: 1.5%;
+  width: 100%;
+  gap:2%;
+  // background-color: var(--font);
+}
+
+form .mark label{
+  color: #000000;
+  font-family: petemoss;
+  font-size: 3vh;
+  font-weight: 500;
 }
