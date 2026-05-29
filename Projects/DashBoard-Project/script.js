@@ -15,47 +15,24 @@ function frontpageTrans() {
   });
 }
 
-// frontpageTrans();
+frontpageTrans();
 
-let form = document.querySelector(".addTask form");
-let Taskinput = document.querySelector(".addTask form #tk");
-let Descinput = document.querySelector(".addTask form textarea");
-let Check = document.querySelector(".addTask form #check");
+var Tak = [];
 
-let Tak = [
-  {
-    task: "Wake Up Early before sunrise",
-    details: "To maintain the time or enery in a better way.",
-    imp: true,
-  },
-
-  {
-    task: "Do Exercise / Go to Gym on daily basis",
-    details: "To maintain the body or health.",
-    imp: true,
-  },
-
-  {
-    task: "Work on your skills for a best life",
-    details: "Invest on your most time here which will pay you later.",
-    imp: true,
-  },
-
-  {
-    task: "Use handset / Mobile",
-    details: "Only for good things not for the entertainment.",
-    imp: false,
-  },
-];
+if (localStorage.getItem("Tak")) {
+  Tak = JSON.parse(localStorage.getItem("Tak"));
+} else {
+  console.log("Task item is empty");
+}
 
 function Todopage() {
   let tk = document.querySelector(".allTask");
   let sum = "";
   // console.log(tk);
-  Tak.forEach(function (elem) {
+  Tak.forEach(function (elem,idx) {
     sum += `<div class="task">
                 <h5>${elem.task} <span class=${elem.imp}>imp</span></h5>
-                <button>Accomplished</button>
+                <button id=${idx}>Accomplished</button>
               </div>`;
   });
 
@@ -64,13 +41,35 @@ function Todopage() {
 
 Todopage();
 
+let form = document.querySelector(".addTask form");
+let Taskinput = document.querySelector(".addTask form #tk");
+let Descinput = document.querySelector(".addTask form textarea");
+let Check = document.querySelector(".addTask form #check");
+
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   // console.log(Taskinput.value);
   // console.log(Descinput.value);
   // console.log(Check.checked);
 
-  Tak.push({task:tak.value, details: taskdetailsinput.value, imp:impCheckbox.checked})
-  console.log(Tak);
-  
+  Tak.push({
+    task: Taskinput.value,
+    details: Descinput,
+    imp: Check.checked,
+  });
+
+  Todopage();
+
+  localStorage.setItem("Tak", JSON.stringify(Tak));
+  Taskinput.value = "";
+  Descinput = "";
+  Check.checked = "";
 });
+
+var accomplishedbtn = document.querySelectorAll('.task button')
+accomplishedbtn.forEach(function(Btn){
+  Btn.addEventListener('click',function(){
+    console.log(Btn.id);
+    
+  })
+})
