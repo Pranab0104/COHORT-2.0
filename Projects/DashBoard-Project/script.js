@@ -17,59 +17,64 @@ function frontpageTrans() {
 
 frontpageTrans();
 
-var Tak = [];
+function todo() {
+  var Tak = [];
 
-if (localStorage.getItem("Tak")) {
-  Tak = JSON.parse(localStorage.getItem("Tak"));
-} else {
-  console.log("Task item is empty");
-}
+  if (localStorage.getItem("Tak")) {
+    Tak = JSON.parse(localStorage.getItem("Tak"));
+  } else {
+    console.log("Task item is empty");
+  }
 
-function Todopage() {
-  let tk = document.querySelector(".allTask");
-  let sum = "";
-  // console.log(tk);
-  Tak.forEach(function (elem,idx) {
-    sum += `<div class="task">
-                <h5>${elem.task} <span class=${elem.imp}>imp</span></h5>
-                <button id=${idx}>Accomplished</button>
-              </div>`;
-  });
+  function Todopage() {
+    let tk = document.querySelector(".allTask");
+    let sum = "";
+    // console.log(tk);
+    Tak.forEach(function (elem, idx) {
+      sum += `<div class="task">
+    <h5>${elem.task} <span class=${elem.imp}>imp</span></h5>
+    <button id=${idx}>Accomplished</button>
+    </div>`;
+    });
 
-  tk.innerHTML = sum;
-}
+    tk.innerHTML = sum;
 
-Todopage();
+    localStorage.setItem("Tak", JSON.stringify(Tak));
 
-let form = document.querySelector(".addTask form");
-let Taskinput = document.querySelector(".addTask form #tk");
-let Descinput = document.querySelector(".addTask form textarea");
-let Check = document.querySelector(".addTask form #check");
-
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  // console.log(Taskinput.value);
-  // console.log(Descinput.value);
-  // console.log(Check.checked);
-
-  Tak.push({
-    task: Taskinput.value,
-    details: Descinput,
-    imp: Check.checked,
-  });
+    document.querySelectorAll(".task button").forEach(function (Btn) {
+      Btn.addEventListener("click", function () {
+        Tak.splice(Btn.id, 1);
+        Todopage();
+        location.reload();
+      });
+    });
+  }
 
   Todopage();
 
-  localStorage.setItem("Tak", JSON.stringify(Tak));
-  Taskinput.value = "";
-  Descinput = "";
-  Check.checked = "";
-});
+  let form = document.querySelector(".addTask form");
+  let Taskinput = document.querySelector(".addTask form #tk");
+  let Descinput = document.querySelector(".addTask form textarea");
+  let Check = document.querySelector(".addTask form #check");
 
-var accomplishedbtn = document.querySelectorAll('.task button')
-accomplishedbtn.forEach(function(Btn){
-  Btn.addEventListener('click',function(){
-    console.log(Btn.id);
-    
-  })
-})
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    // console.log(Taskinput.value);
+    // console.log(Descinput.value);
+    // console.log(Check.checked);
+
+    Tak.push({
+      task: Taskinput.value,
+      details: Descinput.value,
+      imp: Check.checked,
+    });
+
+    Todopage();
+
+    Taskinput.value = "";
+    Descinput.value = "";
+    Check.checked = "false";
+  });
+}
+
+todo();
