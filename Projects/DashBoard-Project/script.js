@@ -78,3 +78,40 @@ function todo() {
 }
 
 todo();
+
+function everyDay() {
+  var plan = document.querySelector(".daily-plan");
+
+  var planData = JSON.parse(localStorage.getItem("planData")) || {};
+
+  var hrs = Array.from(
+    { length: 18 },
+    (elem, idx) => `${6 + idx}:00 - ${7 + idx}:00`,
+  );
+
+  var wholeDay = "";
+  hrs.forEach(function (elem, idx) {
+    var savedData = planData[idx] || "";
+
+    wholeDay =
+      wholeDay +
+      `<div class="daily-plan-timer">
+              <p>${elem}</p>
+              <input id=${idx} type="text" placeholder="..." value= ${savedData}>
+            </div>`;
+  });
+
+  plan.innerHTML = wholeDay;
+
+  var inp = document.querySelectorAll(".daily-plan input");
+
+  inp.forEach(function (elem) {
+    elem.addEventListener("input", function () {
+      planData[elem.id] = elem.value;
+
+      localStorage.setItem("planData", JSON.stringify(planData));
+    });
+  });
+}
+
+everyDay();
