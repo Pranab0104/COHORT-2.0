@@ -376,7 +376,7 @@ form .mark label {
   top: 1%;
   left: 1%;
   position: absolute;
-  color: #000000;
+  color: rgb(128, 26, 47);
   font-family: italic;
 }
 
@@ -390,4 +390,144 @@ form .mark label {
   color: #000000;
   font-size: 2.4vh;
   padding-top: 3%;
+}
+
+.motivational-page {
+  position: relative;
+}
+
+.motivational-pag .box {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.motivational-page .motivational-container {
+  height: 350px;
+  margin-top: 4%;
+  width: 700px;
+  position: absolute;
+  background-color: var(--sec);
+  border-radius: 50px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.motivational-page .motivational-container::after {
+  content: "";
+  background-color: #810b38;
+  box-shadow: 15px 20px 20px rgb(49, 7, 16);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50px;
+  scale: 1.2;
+  filter: blur(8px);
+  z-index: 8;
+}
+
+.motivational-page .motivational-container .motivational-wrapper {
+  background-color: var(--sec);
+  position: absolute;
+  box-shadow: 15px 25px 20px rgb(49, 7, 16);
+  width: 100%;
+  padding: 2%;
+  border-radius: 20px;
+  z-index: 10;
+}
+
+.motivational-wrapper .moti-1 {
+  background-color: var(--font);
+  padding: 2%;
+  border-radius: 15px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.moti-1 h4 {
+  font-size: 3vh;
+  font-weight: 100;
+  color: var(--primary);
+  font-family: hand;
+}
+
+.motivational-wrapper .moti-2 {
+  padding: 2% 2%;
+  margin-top: 2%;
+}
+
+.motivational-wrapper .moti-2 h4 {
+  font-size: 5vh;
+  font-weight: 200;
+  color: var(--font);
+  font-family: petemoss;
+}
+
+.motivational-wrapper .moti-3 {
+  padding: 2%;
+  margin-top: 1%;
+}
+
+.motivational-wrapper .moti-3 h4 {
+  font-size: 5vh;
+  font-weight: 200;
+  color: black;
+  font-family: petemoss;
+  text-align: right;
+}
+
+.motivational-page .motivational-container .motivational-wrapper img {
+  top: 30%;
+  right: 2%;
+  position: absolute;
+  height: auto;
+  opacity: 30%;
+}
+
+.pomodoro-page {
+  display: block;
+  position: relative;
+}
+
+.pomodoro-page .pomo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.pomo h2 {
+  font-size: 18vh;
+  font-family: normal;
+  font-weight: 300;
+  color: var(--font);
+}
+
+.pomo button {
+  font-size: 3vh;
+  background-color: black;
+  border-radius: 10px;
+  padding: 2% 3%;
+  border: none;
+  margin: 4%;
+  font-family: light;
+  font-weight: 100;
+  transition: all ease-in-out 0.2s;
+}
+.pomo button:hover {
+  cursor: pointer;
+  background-color: var(--font);
+  color: var(--sec);
+  scale: 1.1;
+  box-shadow: 5px 8px 4px black;
+  font-family: italic;
+  transition: all ease-in-out 0.2s;
+}
+
+.pomo button:active {
+  scale: 0.8;
 }/*# sourceMappingURL=style.css.map */

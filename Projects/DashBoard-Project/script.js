@@ -115,3 +115,32 @@ function everyDay() {
 }
 
 everyDay();
+
+function Quotes() {
+  let quote = document.querySelector(".moti-2 h4");
+  let author = document.querySelector(".moti-3 h4");
+
+  async function Motivational() {
+    let moti = await fetch("http://api.quotable.io/random");
+    let data = await moti.json();
+
+    quote.innerHTML = data.content;
+    author.innerHTML = data.author;
+  }
+
+  Motivational();
+}
+
+Quotes();
+
+let totalTime = 1260;
+let time = document.querySelector(".pomo h2");
+
+function updateTime() {
+  let minutes = Math.floor(totalTime / 60);
+  let seconds = totalTime % 60;
+
+  time.innerHTML = `${minutes}:${seconds}`;
+  // console.log(minutes, seconds);
+}
+updateTime();
