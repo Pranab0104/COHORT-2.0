@@ -134,7 +134,7 @@ function Quotes() {
 Quotes();
 
 let totalTime = 1260;
-let time = document.querySelector(".pomo h2");
+let time = document.querySelector(".pomo h6");
 
 function updateTime() {
   let minutes = Math.floor(totalTime / 60);

@@ -544,7 +544,7 @@ form .mark label {
   text-align: center;
 }
 
-.pomo h2 {
+.pomodoro-page .pomo h6 {
   font-size: 18vh;
   font-family: normal;
   font-weight: 300;
@@ -552,7 +552,7 @@ form .mark label {
 }
 
 .pomo button {
-  font-size: 3vh;
+  font-size: 2.4vh;
   background-color: black;
   border-radius: 10px;
   padding: 2% 3%;
@@ -566,7 +566,7 @@ form .mark label {
     cursor: pointer;
     background-color: var(--font);
     color: var(--sec);
-    scale: 1.1;
+    scale: 1;
     box-shadow: 5px 8px 4px black;
     font-family: italic;
     transition: all ease-in-out 0.2s;
