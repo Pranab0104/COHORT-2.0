@@ -488,7 +488,6 @@ form .mark label {
 }
 
 .pomodoro-page {
-  display: block;
   position: relative;
 }
 
@@ -524,10 +523,23 @@ form .mark label {
   color: var(--sec);
   scale: 1;
   box-shadow: 5px 8px 4px black;
-  font-family: italic;
   transition: all ease-in-out 0.2s;
 }
 
 .pomo button:active {
   scale: 0.8;
+}
+
+.pomodoro-page h4 {
+  font-family: light;
+  position: absolute;
+  font-size: 3.5vh;
+  top: 23%;
+  background-color: var(--sec);
+  border-radius: 10px;
+  box-shadow: 10px 20px 20px rgb(49, 7, 16);
+  padding: 1% 1.5%;
+  left: 50%;
+  color: var(--font);
+  transform: translate(-50%, 0%);
 }/*# sourceMappingURL=style.css.map */

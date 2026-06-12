@@ -532,7 +532,7 @@ form .mark label {
 // Pomodoro timer page starts from here...
 
 .pomodoro-page {
-  display: block;
+  // display: block;
   position: relative;
 }
 
@@ -561,18 +561,34 @@ form .mark label {
   font-family: light;
   font-weight: 100;
   transition: all ease-in-out 0.2s;
-
+  
   &:hover {
     cursor: pointer;
+    // background-color: #541a1a;
     background-color: var(--font);
     color: var(--sec);
+    // margin: 4%;
     scale: 1;
     box-shadow: 5px 8px 4px black;
-    font-family: italic;
     transition: all ease-in-out 0.2s;
   }
 }
 
 .pomo button:active {
   scale: 0.8;
+}
+
+.pomodoro-page h4{
+  font-family: light;
+  position: absolute;
+  font-size: 3.5vh;
+  top: 23%;
+  background-color: var(--sec);
+  border-radius: 10px;
+  box-shadow: 10px 20px 20px rgb(49, 7, 16);
+  // box-shadow: 5px 8px 4px black;
+  padding: 1% 1.5%;
+  left: 50%;
+  color: var(--font);
+  transform: translate(-50%, 0%);
 }

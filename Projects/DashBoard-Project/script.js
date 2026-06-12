@@ -133,24 +133,68 @@ function Quotes() {
 
 Quotes();
 
-let time = document.querySelector(".pomo h6");
-let start = document.querySelector('.pomo .Start-time')
-let pause = document.querySelector('.pomo .Pause-time')
-let reset = document.querySelector('.pomo .Reset-time')
+function PomoTimer(){
+  let time = document.querySelector(".pomo h6");
+let start = document.querySelector(".pomo .Start-time");
+let pause = document.querySelector(".pomo .Pause-time");
+let reset = document.querySelector(".pomo .Reset-time");
+let sess = document.querySelector(".pomodoro-page .session");
 
-let totalTime = 25*60;
+let timeInterval;
+let isBreak = false;
+let totalTime = 25 * 60;
 
 function updateTime() {
   let minutes = Math.floor(totalTime / 60);
   let seconds = totalTime % 60;
 
-  time.innerHTML = `${minutes}:${seconds}`;
+  time.innerHTML = `${String(minutes).padStart("2", "0")}:${String(seconds).padStart("2", "0")}`;
   // console.log(minutes, seconds);
 }
 
-setInterval(()=>{
-  totalTime--
-  updateTime()
-},1000)
+function starttimer() {
+  clearInterval(timeInterval);
 
-// updateTime();
+  timeInterval = setInterval(() => {
+    if (totalTime <= 0) {
+      clearInterval(timeInterval);
+
+      if (!isBreak) {
+        isBreak = true;
+        totalTime = 5 * 60;
+        time.innerHTML = "05:00"
+        sess.innerHTML = 'Break Time ☕'
+      } else {
+        isBreak = false;
+        totalTime = 25 * 60;
+        sess.innerHTML = 'Work Session 💻'
+        time.innerHTML = "25:00"
+      }
+
+      updateTime();
+      // starttimer(); // Auto start for the next session
+      return;
+    }
+
+    totalTime--;
+    updateTime();
+  }, 10);
+}
+
+function pausetimer() {
+  clearInterval(timeInterval);
+}
+
+function resettimer() {
+  clearInterval(timeInterval);
+  totalTime = 25 * 60;
+  updateTime();
+}
+
+start.addEventListener("click", starttimer);
+pause.addEventListener("click", pausetimer);
+reset.addEventListener("click", resettimer);
+
+}
+
+PomoTimer();
