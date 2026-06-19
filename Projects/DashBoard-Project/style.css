@@ -47,7 +47,7 @@ body {
 h1 {
   font-family: hand;
   color: var(--tri);
-  font-size: 10vh;
+  font-size: 8vh;
   font-weight: 200;
   align-items: center;
   justify-content: center;
@@ -61,20 +61,80 @@ h1 {
 section.allelem {
   height: 100%;
   width: 100%;
-  padding: 2.5%;
+  padding: 2%;
   background-color: var(--sec);
+  overflow: auto;
+  position: absolute;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   gap: 2%;
-  position: absolute;
+}
+
+.allelem header {
+  height: 35%;
+  margin-top: 1.5%;
+  width: 100%;
+  padding: 2%;
+  background-image: url(https://images.unsplash.com/photo-1702675231699-87671e0271c8?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .header1 h3 {
+  color: var(--primary);
+  font-family: italic;
+  font-size: 3vh;
+  font-weight: 300;
+}
+
+header .header1 h2 {
+  color: var(--font);
+  font-family: light;
+  font-size: 5vh;
+  font-weight: 300;
+}
+
+header .header1 h4 {
+  color: var(--primary);
+  font-family: italic;
+  font-size: 3vh;
+  font-weight: 300;
+}
+
+header .header2 h2 {
+  color: var(--font);
+  font-family: light;
+  font-size: 5vh;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+
+header .header2 h3 {
+  color: var(--primary);
+  font-family: italic;
+  font-size: 3vh;
+  font-weight: 100;
+}
+
+.allelem .allFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2%;
+  width: 100%;
 }
 
 .elem {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40%;
+  aspect-ratio: 1/1;
   width: 18%;
   position: relative;
   background-color: var(--font);

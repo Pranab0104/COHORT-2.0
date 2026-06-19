@@ -133,68 +133,132 @@ function Quotes() {
 
 Quotes();
 
-function PomoTimer(){
+function PomoTimer() {
   let time = document.querySelector(".pomo h6");
-let start = document.querySelector(".pomo .Start-time");
-let pause = document.querySelector(".pomo .Pause-time");
-let reset = document.querySelector(".pomo .Reset-time");
-let sess = document.querySelector(".pomodoro-page .session");
+  let start = document.querySelector(".pomo .Start-time");
+  let pause = document.querySelector(".pomo .Pause-time");
+  let reset = document.querySelector(".pomo .Reset-time");
+  let sess = document.querySelector(".pomodoro-page .session");
 
-let timeInterval;
-let isBreak = false;
-let totalTime = 25 * 60;
+  let timeInterval;
+  let isBreak = false;
+  let totalTime = 25 * 60;
 
-function updateTime() {
-  let minutes = Math.floor(totalTime / 60);
-  let seconds = totalTime % 60;
+  function updateTime() {
+    let minutes = Math.floor(totalTime / 60);
+    let seconds = totalTime % 60;
 
-  time.innerHTML = `${String(minutes).padStart("2", "0")}:${String(seconds).padStart("2", "0")}`;
-  // console.log(minutes, seconds);
-}
+    time.innerHTML = `${String(minutes).padStart("2", "0")}:${String(seconds).padStart("2", "0")}`;
+    // console.log(minutes, seconds);
+  }
 
-function starttimer() {
-  clearInterval(timeInterval);
+  function starttimer() {
+    clearInterval(timeInterval);
 
-  timeInterval = setInterval(() => {
-    if (totalTime <= 0) {
-      clearInterval(timeInterval);
+    timeInterval = setInterval(() => {
+      if (totalTime <= 0) {
+        clearInterval(timeInterval);
 
-      if (!isBreak) {
-        isBreak = true;
-        totalTime = 5 * 60;
-        time.innerHTML = "05:00"
-        sess.innerHTML = 'Break Time ☕'
-      } else {
-        isBreak = false;
-        totalTime = 25 * 60;
-        sess.innerHTML = 'Work Session 💻'
-        time.innerHTML = "25:00"
+        if (!isBreak) {
+          isBreak = true;
+          totalTime = 5 * 60;
+          time.innerHTML = "05:00";
+          sess.innerHTML = "Break Time ☕";
+        } else {
+          isBreak = false;
+          totalTime = 25 * 60;
+          sess.innerHTML = "Work Session 💻";
+          time.innerHTML = "25:00";
+        }
+
+        updateTime();
+        // starttimer(); // Auto start for the next session
+        return;
       }
 
+      totalTime--;
       updateTime();
-      // starttimer(); // Auto start for the next session
-      return;
-    }
+    }, 10);
+  }
 
-    totalTime--;
+  function pausetimer() {
+    clearInterval(timeInterval);
+  }
+
+  function resettimer() {
+    clearInterval(timeInterval);
+    totalTime = 25 * 60;
     updateTime();
-  }, 10);
-}
+  }
 
-function pausetimer() {
-  clearInterval(timeInterval);
-}
-
-function resettimer() {
-  clearInterval(timeInterval);
-  totalTime = 25 * 60;
-  updateTime();
-}
-
-start.addEventListener("click", starttimer);
-pause.addEventListener("click", pausetimer);
-reset.addEventListener("click", resettimer);
-
+  start.addEventListener("click", starttimer);
+  pause.addEventListener("click", pausetimer);
+  reset.addEventListener("click", resettimer);
 }
 
 PomoTimer();
+
+let apikey = `e96047fb627e53cae3c7302d7ee731a0`;
+
+let city = "chandrapur";
+
+let day = document.querySelector(".header1 h2");
+let dateHeading = document.querySelector(".header1 h3");
+
+var data = null;
+
+async function weatherAPI() {
+  let response = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`,
+  );
+
+  data = await response.json();
+}
+
+weatherAPI();
+
+function timeDate() {
+  const totalDays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const monthName = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  var date = new Date();
+  var Week = totalDays[date.getDay()];
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
+  var tarik = date.getDate();
+  var month = monthName[date.getMonth()];
+  var year = date.getFullYear();
+
+  dateHeading.innerHTML = `${tarik} ${month} ${year}`;
+
+  if (hours > 12) {
+    day.innerHTML = `${Week}, ${hours - 12}:${minutes}:${seconds} pm`;
+  } else {
+    day.innerHTML = `${Week}, ${hours}:${minutes}:${seconds} am`;
+  }
+}
+
+setInterval(() => {
+  timeDate();
+}, 1000);
