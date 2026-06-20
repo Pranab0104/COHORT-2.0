@@ -1,3 +1,4 @@
+//Frontpage Logic starts here.....
 function frontpageTrans() {
   let allElem = document.querySelectorAll(".elem");
   let allFull = document.querySelectorAll(".fullelem");
@@ -17,6 +18,7 @@ function frontpageTrans() {
 
 frontpageTrans();
 
+//todolist Logic starts here.....
 function todo() {
   var Tak = [];
 
@@ -79,6 +81,7 @@ function todo() {
 
 todo();
 
+//Dailyplanspage Logic starts here.....
 function everyDay() {
   var plan = document.querySelector(".daily-plan");
 
@@ -116,6 +119,7 @@ function everyDay() {
 
 everyDay();
 
+//Quotespage Logic starts here.....
 function Quotes() {
   let quote = document.querySelector(".moti-2 h4");
   let author = document.querySelector(".moti-3 h4");
@@ -133,6 +137,7 @@ function Quotes() {
 
 Quotes();
 
+//Pomodorotimerpage Logic starts here.....
 function PomoTimer() {
   let time = document.querySelector(".pomo h6");
   let start = document.querySelector(".pomo .Start-time");
@@ -198,12 +203,19 @@ function PomoTimer() {
 
 PomoTimer();
 
-let apikey = `e96047fb627e53cae3c7302d7ee731a0`;
+//TopweatherUI Logic starts here.....
+function WeatherUI() {
+  let apikey = `e96047fb627e53cae3c7302d7ee731a0`;
 
-let city = "chandrapur";
+let city = "Chandrapur";
 
 let day = document.querySelector(".header1 h2");
 let dateHeading = document.querySelector(".header1 h3");
+let temp = document.querySelector(".header2 h2");
+let condition = document.querySelector(".header2 h4");
+let feel = document.querySelector(".header2 #a");
+let hume = document.querySelector(".header2 #b");
+let win = document.querySelector(".header2 #c");
 
 var data = null;
 
@@ -213,6 +225,15 @@ async function weatherAPI() {
   );
 
   data = await response.json();
+
+  console.log(data);
+  
+
+  temp.innerHTML= `${data.main.temp} °C`
+  feel.innerHTML= `Feels like: ${data.main.feels_like} °C`
+  hume.innerHTML= `Humidity: ${data.main.humidity} %`
+  win.innerHTML= `Wind: ${data.wind.speed} km/h`
+  condition.innerHTML= `${data.weather[0].main}`
 }
 
 weatherAPI();
@@ -253,12 +274,15 @@ function timeDate() {
   dateHeading.innerHTML = `${tarik} ${month} ${year}`;
 
   if (hours > 12) {
-    day.innerHTML = `${Week}, ${hours - 12}:${minutes}:${seconds} pm`;
+    day.innerHTML = `${Week}, ${String(hours - 12).padStart(2, '0')}:${String(minutes).padStart('2','0')}:${String(seconds).padStart(2,'0')} pm`;
   } else {
-    day.innerHTML = `${Week}, ${hours}:${minutes}:${seconds} am`;
+    day.innerHTML = `${Week}, ${String(hours).padStart(2, '0')}:${String(minutes).padStart('2','0')}:${String(seconds).padStart(2,'0')} am`;
   }
 }
 
 setInterval(() => {
   timeDate();
 }, 1000);
+}
+
+WeatherUI();
