@@ -82,21 +82,34 @@ nav {
 
   // Theme starts from here
   .theme {
-    height: 5%;
+    // height: 5%;
     // width: 5%;
     display: flex;
     position: relative;
     align-items: center;
     justify-content: start;
     font-size: 100%;
-    border-radius: 15px;
+    border-radius: 50%;
     padding: 0.5%;
     background-color: #000000;
     position: absolute;
     top: 6%;
     right: 3%;
+    font-weight: 600;
+
+    &:hover{
+      cursor: pointer;
+      scale: 1.1;
+      transition: 0.2s ease-in-out;
+    }
+
+  }
+  
+  .theme:active{
+    scale: 0.8;
   }
 }
+
 
 // frontpage starts from here...
 
@@ -486,7 +499,7 @@ form .mark label {
 
 .planner-page .line .daily-plan {
   background-color: var(--sec);
-  height: 90%;
+  height: 70vh;
   padding: 1.3%;
   border-radius: 10px;
   margin-top: 5%;
@@ -533,7 +546,8 @@ form .mark label {
 
 .motivational-page {
   // display: block;
-  position: relative;
+  // position: relative;
+  height: 100vh;
 }
 
 .motivational-pag .box {
@@ -559,7 +573,7 @@ form .mark label {
 .motivational-page .motivational-container::after {
   content: "";
   background-color: #810b38;
-  box-shadow: 15px 20px 20px rgb(49, 7, 16);
+  // box-shadow: 15px 20px 20px rgb(49, 7, 16);
   position: absolute;
   height: 100%;
   width: 100%;
@@ -582,6 +596,7 @@ form .mark label {
 
 .motivational-wrapper .moti-1 {
   background-color: var(--font);
+  box-shadow: 5px 15px 15px rgb(20, 19, 20);
   padding: 2%;
   border-radius: 15px;
   display: flex;
@@ -632,7 +647,9 @@ form .mark label {
 
 .pomodoro-page {
   // display: block;
-  position: relative;
+  // position: relative;
+  height: 100vh;
+  // width: 100%;
 }
 
 .pomodoro-page .pomo {
@@ -647,7 +664,7 @@ form .mark label {
   font-size: 18vh;
   font-family: normal;
   font-weight: 300;
-  color: var(--font);
+  color: var(--primary);
 }
 
 .pomo button {
@@ -664,8 +681,8 @@ form .mark label {
   &:hover {
     cursor: pointer;
     // background-color: #541a1a;
-    background-color: var(--font);
-    color: var(--sec);
+    background-color: var(--sec);
+    color: var(--font);
     // margin: 4%;
     scale: 1;
     box-shadow: 5px 8px 4px black;

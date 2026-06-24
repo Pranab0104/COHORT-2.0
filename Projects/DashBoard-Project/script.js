@@ -286,3 +286,10 @@ setInterval(() => {
 }
 
 WeatherUI();
+
+let Theme = document.querySelector('.theme')
+
+var rootElement = document.documentElement
+
+// console.log(rootElement);
+// rootElement.style.setProperty('--primary','--sec')

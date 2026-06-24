@@ -71,18 +71,26 @@ nav h1 {
   border-bottom: 5px solid black;
 }
 nav .theme {
-  height: 5%;
   display: flex;
   position: relative;
   align-items: center;
   justify-content: start;
   font-size: 100%;
-  border-radius: 15px;
+  border-radius: 50%;
   padding: 0.5%;
   background-color: #000000;
   position: absolute;
   top: 6%;
   right: 3%;
+  font-weight: 600;
+}
+nav .theme:hover {
+  cursor: pointer;
+  scale: 1.1;
+  transition: 0.2s ease-in-out;
+}
+nav .theme:active {
+  scale: 0.8;
 }
 
 section.allelem {
@@ -446,7 +454,7 @@ form .mark label {
 
 .planner-page .line .daily-plan {
   background-color: var(--sec);
-  height: 90%;
+  height: 70vh;
   padding: 1.3%;
   border-radius: 10px;
   margin-top: 5%;
@@ -488,7 +496,7 @@ form .mark label {
 }
 
 .motivational-page {
-  position: relative;
+  height: 100vh;
 }
 
 .motivational-pag .box {
@@ -514,7 +522,6 @@ form .mark label {
 .motivational-page .motivational-container::after {
   content: "";
   background-color: #810b38;
-  box-shadow: 15px 20px 20px rgb(49, 7, 16);
   position: absolute;
   height: 100%;
   width: 100%;
@@ -536,6 +543,7 @@ form .mark label {
 
 .motivational-wrapper .moti-1 {
   background-color: var(--font);
+  box-shadow: 5px 15px 15px rgb(20, 19, 20);
   padding: 2%;
   border-radius: 15px;
   display: flex;
@@ -583,7 +591,7 @@ form .mark label {
 }
 
 .pomodoro-page {
-  position: relative;
+  height: 100vh;
 }
 
 .pomodoro-page .pomo {
@@ -598,7 +606,7 @@ form .mark label {
   font-size: 18vh;
   font-family: normal;
   font-weight: 300;
-  color: var(--font);
+  color: var(--primary);
 }
 
 .pomo button {
@@ -614,8 +622,8 @@ form .mark label {
 }
 .pomo button:hover {
   cursor: pointer;
-  background-color: var(--font);
-  color: var(--sec);
+  background-color: var(--sec);
+  color: var(--font);
   scale: 1;
   box-shadow: 5px 8px 4px black;
   transition: all ease-in-out 0.2s;
