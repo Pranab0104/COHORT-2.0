@@ -1,0 +1,724 @@
+:root {
+  --primary: #f1e2d1;
+  --sec: #dcc3aa;
+  --tri: #541a1a;
+  --font: #810b38;
+  --black: #000000;
+}
+
+.dark-theme {
+  --primary: #18181b;
+  --sec: #27272a;
+  --tri: #f4ebd0;
+  --font: #d4a017;
+  --black: #fafafa;
+}
+
+@font-face {
+  font-family: light;
+  src: url(./assets/fonts/AeonikTRIAL-Light.otf);
+}
+
+@font-face {
+  font-family: italic;
+  src: url(./assets/fonts/AeonikTRIAL-RegularItalic.otf);
+}
+
+@font-face {
+  font-family: normal;
+  src: url(./assets/fonts/AeonikTRIAL-Regular.otf);
+}
+
+@font-face {
+  font-family: hand;
+  src: url(./assets/fonts/handwrite.otf);
+}
+
+@font-face {
+  font-family: Petemoss;
+  src: url(./assets/fonts/Petemoss.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--sec);
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+#main {
+  height: 100lvh;
+  width: 100%;
+  background-color: var(--sec);
+  display: flex;
+  flex-direction: column;
+}
+
+// Top heading...
+
+nav {
+  width: 100%;
+  min-height: 10%;
+  padding: 2%;
+  flex-shrink: 0;
+
+  .nav-in {
+    display: flex;
+    background-color: var(--primary);
+    align-items: center;
+    justify-content: space-between;
+    padding: 1%;
+    border-radius: 15px;
+  }
+
+  h1 {
+    font-family: hand;
+    color: var(--tri);
+    font-size: 3vh;
+    font-weight: 200;
+    text-transform: uppercase;
+    text-shadow: 0px 12px 8px rgb(103, 74, 79);
+    border-bottom: 5px solid black;
+  }
+
+  // Theme starts from here
+  .theme {
+    // height: 5%;
+    // width: 5%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: start;
+    font-size: 100%;
+    border-radius: 50%;
+    padding: 0.5%;
+    background-color: var(--black);
+    position: absolute;
+    top: 6%;
+    right: 3%;
+    font-weight: 600;
+
+    &:hover {
+      cursor: pointer;
+      scale: 1.1;
+      transition: 0.2s ease-in-out;
+    }
+  }
+
+  .theme:active {
+    scale: 0.8;
+  }
+}
+
+.dark-theme .elem {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.dark-theme .line {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.45);
+}
+
+// frontpage starts from here...
+
+section.allelem {
+  flex: 1;
+  width: 100%;
+  padding: 2%;
+  overflow-y: hidden;
+  background-color: var(--sec);
+  overflow: auto;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2%;
+}
+
+.allelem header {
+  height: 35%;
+  margin-top: 0%;
+  width: 100%;
+  padding: 2%;
+  background-image: url(https://images.unsplash.com/photo-1702675231699-87671e0271c8?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-position: center;
+  // background-color: var(--font);
+  border-radius: 15px;
+  // margin-bottom: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .header1 h3 {
+  color: var(--primary);
+  font-family: italic;
+  font-size: 3vh;
+  font-weight: 300;
+}
+
+header .header1 h2 {
+  color: var(--font);
+  font-family: light;
+  font-size: 5vh;
+  font-weight: 300;
+}
+
+header .header1 h4 {
+  color: var(--primary);
+  font-family: italic;
+  font-size: 3vh;
+  font-weight: 300;
+}
+
+header .header2 h2 {
+  color: var(--font);
+  font-family: light;
+  font-size: 5vh;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+
+header .header2 h4 {
+  color: var(--primary);
+  font-family: italic;
+  font-size: 3vh;
+  font-weight: 100;
+}
+
+header .header2 h3 {
+  color: var(--primary);
+  font-family: italic;
+  font-size: 3vh;
+  font-weight: 100;
+}
+
+.allelem .allFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2%;
+  // height: 100%;
+  width: 100%;
+}
+
+.elem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // height: 40%;
+  aspect-ratio: 1/1;
+  width: 18%;
+  position: relative;
+  background-color: var(--font);
+  overflow: hidden;
+  // font-style: normal;
+  // font-weight: 500;
+  // font-size: 5vh;
+  border-radius: 10px;
+  // text-decoration: underline;
+  transition: all ease 0.23s;
+}
+
+.elem:active {
+  scale: 0.8;
+}
+
+.elem:hover {
+  background-color: var(--primary);
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(212, 160, 23, 0.25);
+  // text-decoration: underline;
+  // font-size: 4vh;
+  font-family: hand;
+  // color: var(--tri);
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.elem img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+
+  &:hover {
+    filter: blur(10px);
+  }
+}
+
+.elem h2 {
+  position: absolute;
+  left: 10%;
+  top: 85%;
+  color: var(--font);
+}
+
+.fullelem {
+  min-height: 100vh;
+  width: 100%;
+  padding: 2%;
+  display: none;
+  position: absolute;
+  background-color: var(--primary);
+  box-sizing: border-box;
+}
+
+.fullelem .line {
+  background-color: var(--font);
+  padding: 2%;
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border: 2px solid var(--black);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 10px 20px var(--black);
+}
+
+.fullelem h3 {
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4vh;
+  letter-spacing: 1px;
+  font-family: hand;
+  text-transform: capitalize;
+  font-weight: 200;
+  text-shadow: 0px 2px 4px var(--black);
+}
+
+.back {
+  position: absolute;
+  right: 4%;
+  border: 2px solid var(--sec);
+  background-color: var(--primary);
+  border-radius: 10px;
+  font-size: 1.8vh;
+  font-family: normal;
+  font-weight: 100;
+  padding: 1%;
+  letter-spacing: 1.3px;
+  color: var(--font);
+  text-shadow: 1px 1px var(--black);
+  box-shadow: 3px 2px 3px var(--black);
+
+  &:hover {
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 2vh;
+    background-color: var(--black);
+    color: var(--sec);
+    transition: all ease 0.4s;
+    box-shadow: 3px 2px 3px rgb(170, 143, 143);
+  }
+}
+
+.back:active {
+  scale: 0.9;
+}
+
+// topage starts here...
+
+.todo-page .todo-container {
+  min-height: 70vh;
+  width: 100%;
+  display: flex;
+  gap: 2%;
+  margin-top: 5%;
+  box-sizing: border-box;
+  background-color: var(--font);
+}
+
+.todo-page .todo-container .addTask {
+  flex: 4;
+  border: 3px solid var(--black);
+  box-shadow: 5px 13px 15px rgb(0, 0, 0);
+  border-radius: 15px;
+  background-color: var(--primary);
+}
+
+.todo-page .todo-container .addTask form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2%;
+  gap: 2%;
+}
+
+.todo-container .addTask form input#tk {
+  padding: 2% 3%;
+  font-size: 2.6vh;
+  font-family: normal;
+  border: none;
+  margin: 3% 0%;
+  border-radius: 15px;
+  background-color: var(--black);
+  color: var(--primary);
+  font-weight: 500;
+  outline: none;
+  width: 100%;
+  box-shadow: 3px 5px 10px rgb(157, 45, 45);
+}
+
+.todo-container .addTask form textarea {
+  padding: 2% 3%;
+  font-size: 3vh;
+  font-family: normal;
+  border: none;
+  margin: 3% 0%;
+  border-radius: 15px;
+  background-color: var(--font);
+  color: var(--sec);
+  font-weight: 500;
+  outline: none;
+  width: 100%;
+  box-shadow: 3px 8px 10px var(--black);
+}
+
+.todo-container .addTask form button {
+  border: 2px solid var(--sec);
+  background-color: var(--primary);
+  border-radius: 10px;
+  font-size: 1.8vh;
+  font-family: normal;
+  width: 100%;
+  font-weight: 100;
+  padding: 2% 3%;
+  margin: 3% 0%;
+  letter-spacing: 1.3px;
+  color: var(--font);
+  text-shadow: 1px 1px var(--black);
+  box-shadow: 3px 2px 3px var(--black);
+
+  &:hover {
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 2vh;
+    background-color: var(--black);
+    color: var(--sec);
+    transition: all ease 0.4s;
+    box-shadow: 3px 2px 3px rgb(170, 143, 143);
+  }
+}
+
+.todo-page .todo-container .allTask {
+  border-radius: 15px;
+  border: 3px solid var(--black);
+  box-shadow: 5px 13px 15px rgb(0, 0, 0);
+  flex: 6;
+  overflow: auto;
+  padding: 1% 2%;
+  background-color: var(--sec);
+}
+
+.task {
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 3%;
+  color: var(--primary);
+  margin: 2% 0%;
+  background-color: var(--font);
+}
+
+.task h5 {
+  font-family: light;
+  font-size: 3vh;
+  font-weight: 100;
+  gap: 1%;
+  display: flex;
+  align-items: center;
+}
+
+.task h5 span {
+  font-family: italic;
+  font-size: 2vh;
+  font-weight: 900;
+  color: var(--font);
+  border-radius: 10px;
+  padding: 1.4%;
+  background-color: var(--sec);
+}
+
+.task h5 span.true {
+  opacity: 1;
+}
+
+.task h5 span.false {
+  opacity: 0;
+}
+
+.task button {
+  font-family: light;
+  font-size: 2vh;
+  font-weight: 100;
+  background-color: var(--primary);
+  color: var(--black);
+  padding: 1%;
+  letter-spacing: 1.5px;
+  border-radius: 15px 0px;
+
+  &:hover {
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 2vh;
+    background-color: var(--black);
+    color: var(--sec);
+    transition: all ease 0.4s;
+    box-shadow: 3px 2px 3px rgb(170, 143, 143);
+  }
+}
+
+.task button:active {
+  scale: 0.8;
+}
+
+form .mark {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1%;
+  margin-bottom: 1.5%;
+  width: 100%;
+  gap: 2%;
+  // background-color: var(--font);
+}
+
+form .mark label {
+  color: var(--black);
+  font-family: petemoss;
+  font-size: 3vh;
+  font-weight: 500;
+}
+
+// Daily plans page starts from here...
+
+// .planner-page{
+//   display: block;
+// }
+
+.planner-page .line .daily-plan {
+  background-color: var(--sec);
+  height: 70vh;
+  padding: 1.3%;
+  border-radius: 10px;
+  margin-top: 5%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  // gap: 1%;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow: auto;
+}
+
+.planner-page .line .daily-plan .daily-plan-timer {
+  // background-color: var(--font);
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 49%;
+  margin-bottom: 1%;
+}
+
+.daily-plan .daily-plan-timer p {
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  position: absolute;
+  color: rgb(128, 26, 47);
+  font-family: italic;
+}
+
+.daily-plan-timer input {
+  padding: 1% 4%;
+  background-color: var(--primary);
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  font-family: light;
+  color: var(--black);
+  font-size: 2.4vh;
+  padding-top: 3%;
+}
+
+// motivational quotes starts from here...
+
+.motivational-page {
+  // display: block;
+  // position: relative;
+  height: 100vh;
+}
+
+.motivational-pag .box {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.motivational-page .motivational-container {
+  height: 350px;
+  margin-top: 3%;
+  width: 700px;
+  position: absolute;
+  background-color: var(--sec);
+  border-radius: 15px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.motivational-page .motivational-container::after {
+  content: "";
+  background-color: transparent;
+  // box-shadow: 15px 20px 20px rgb(49, 7, 16);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  scale: 1.2;
+  filter: blur(8px);
+  z-index: 8;
+}
+
+.motivational-page .motivational-container .motivational-wrapper {
+  background-color: transparent;
+  position: absolute;
+  height: 100%;
+  box-shadow: 15px 25px 20px rgb(49, 7, 16);
+  width: 100%;
+  padding: 2%;
+  border-radius: 15px;
+  z-index: 10;
+}
+
+.motivational-wrapper .moti-1 {
+  background-color: var(--font);
+  box-shadow: 5px 15px 15px rgb(20, 19, 20);
+  padding: 2%;
+  border-radius: 15px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.moti-1 h4 {
+  font-size: 3vh;
+  font-weight: 100;
+  color: var(--primary);
+  font-family: hand;
+}
+
+.motivational-wrapper .moti-2 {
+  padding: 2% 2%;
+  margin-top: 2%;
+}
+
+.motivational-wrapper .moti-2 h4 {
+  font-size: 5vh;
+  font-weight: 200;
+  color: var(--font);
+  font-family: petemoss;
+}
+
+.motivational-wrapper .moti-3 {
+  padding: 2%;
+  margin-top: 1%;
+}
+
+.motivational-wrapper .moti-3 h4 {
+  font-size: 5vh;
+  font-weight: 200;
+  color: var(--black);
+  font-family: petemoss;
+  text-align: right;
+}
+
+.motivational-page .motivational-container .motivational-wrapper img {
+  top: 30%;
+  right: 2%;
+  position: absolute;
+  height: auto;
+  opacity: 30%;
+}
+
+// Pomodoro timer page starts from here...
+
+.pomodoro-page {
+  // display: block;
+  // position: relative;
+  height: 100vh;
+  // width: 100%;
+}
+
+.pomodoro-page .pomo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.pomodoro-page .pomo h6 {
+  font-size: 18vh;
+  font-family: normal;
+  font-weight: 300;
+  color: var(--primary);
+}
+
+.pomo button {
+  font-size: 2.4vh;
+  background-color: var(--black);
+  border-radius: 10px;
+  padding: 2% 3%;
+  border: none;
+  margin: 4%;
+  font-family: light;
+  font-weight: 100;
+  transition: all ease-in-out 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    // background-color: #541a1a;
+    background-color: var(--sec);
+    color: var(--font);
+    // margin: 4%;
+    scale: 1;
+    box-shadow: 5px 8px 4px var(--black);
+    transition: all ease-in-out 0.2s;
+  }
+}
+
+.pomo button:active {
+  scale: 0.8;
+}
+
+.pomodoro-page h4 {
+  font-family: light;
+  position: absolute;
+  font-size: 3.5vh;
+  top: 23%;
+  background-color: var(--sec);
+  border-radius: 10px;
+  box-shadow: 10px 20px 20px rgb(49, 7, 16);
+  // box-shadow: 5px 8px 4px black;
+  padding: 1% 1.5%;
+  left: 50%;
+  color: var(--font);
+  transform: translate(-50%, 0%);
+}
