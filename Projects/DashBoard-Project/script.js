@@ -207,89 +207,104 @@ PomoTimer();
 function WeatherUI() {
   let apikey = `e96047fb627e53cae3c7302d7ee731a0`;
 
-let city = "Chandrapur";
+  let city = "Chandrapur";
 
-let day = document.querySelector(".header1 h2");
-let dateHeading = document.querySelector(".header1 h3");
-let temp = document.querySelector(".header2 h2");
-let condition = document.querySelector(".header2 h4");
-let feel = document.querySelector(".header2 #a");
-let hume = document.querySelector(".header2 #b");
-let win = document.querySelector(".header2 #c");
+  let day = document.querySelector(".header1 h2");
+  let dateHeading = document.querySelector(".header1 h3");
+  let temp = document.querySelector(".header2 h2");
+  let condition = document.querySelector(".header2 h4");
+  let feel = document.querySelector(".header2 #a");
+  let hume = document.querySelector(".header2 #b");
+  let win = document.querySelector(".header2 #c");
 
-var data = null;
+  var data = null;
 
-async function weatherAPI() {
-  let response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`,
-  );
+  async function weatherAPI() {
+    let response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`,
+    );
 
-  data = await response.json();
+    data = await response.json();
 
-  console.log(data);
-  
+    console.log(data);
 
-  temp.innerHTML= `${data.main.temp} °C`
-  feel.innerHTML= `Feels like: ${data.main.feels_like} °C`
-  hume.innerHTML= `Humidity: ${data.main.humidity} %`
-  win.innerHTML= `Wind: ${data.wind.speed} km/h`
-  condition.innerHTML= `${data.weather[0].main}`
-}
-
-weatherAPI();
-
-function timeDate() {
-  const totalDays = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  const monthName = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  var date = new Date();
-  var Week = totalDays[date.getDay()];
-  var hours = date.getHours();
-  var minutes = date.getMinutes();
-  var seconds = date.getSeconds();
-  var tarik = date.getDate();
-  var month = monthName[date.getMonth()];
-  var year = date.getFullYear();
-
-  dateHeading.innerHTML = `${tarik} ${month} ${year}`;
-
-  if (hours > 12) {
-    day.innerHTML = `${Week}, ${String(hours - 12).padStart(2, '0')}:${String(minutes).padStart('2','0')}:${String(seconds).padStart(2,'0')} pm`;
-  } else {
-    day.innerHTML = `${Week}, ${String(hours).padStart(2, '0')}:${String(minutes).padStart('2','0')}:${String(seconds).padStart(2,'0')} am`;
+    temp.innerHTML = `${data.main.temp} °C`;
+    feel.innerHTML = `Feels like: ${data.main.feels_like} °C`;
+    hume.innerHTML = `Humidity: ${data.main.humidity} %`;
+    win.innerHTML = `Wind: ${data.wind.speed} km/h`;
+    condition.innerHTML = `${data.weather[0].main}`;
   }
-}
 
-setInterval(() => {
-  timeDate();
-}, 1000);
+  weatherAPI();
+
+  function timeDate() {
+    const totalDays = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const monthName = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    var date = new Date();
+    var Week = totalDays[date.getDay()];
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    var tarik = date.getDate();
+    var month = monthName[date.getMonth()];
+    var year = date.getFullYear();
+
+    dateHeading.innerHTML = `${tarik} ${month} ${year}`;
+
+    if (hours > 12) {
+      day.innerHTML = `${Week}, ${String(hours - 12).padStart(2, "0")}:${String(minutes).padStart("2", "0")}:${String(seconds).padStart(2, "0")} pm`;
+    } else {
+      day.innerHTML = `${Week}, ${String(hours).padStart(2, "0")}:${String(minutes).padStart("2", "0")}:${String(seconds).padStart(2, "0")} am`;
+    }
+  }
+
+  setInterval(() => {
+    timeDate();
+  }, 1000);
 }
 
 WeatherUI();
 
-let Theme = document.querySelector('.theme')
+function themeButton() {
+  const themeBtn = document.querySelector(".theme");
+  const icon = document.querySelector(".theme i");
 
-var rootElement = document.documentElement
+  themeBtn.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark-theme");
 
-// console.log(rootElement);
-// rootElement.style.setProperty('--primary','--sec')
+    if (document.documentElement.classList.contains("dark-theme")) {
+      icon.className = "ri-moon-line";
+    } else {
+      icon.className = "ri-sun-line";
+    }
+
+     if (document.body.classList.contains("dark-theme")) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
+  });
+}
+
+themeButton();
