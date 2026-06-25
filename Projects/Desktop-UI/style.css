@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-image: url("https://i.pinimg.com/1200x/a8/a2/b7/a8a2b729fc04c5e01bafab26fdca88bb.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+body main {
+  height: 100vh;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 0% 0%;
+}
+body main .icons {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(auto-fill, 100px);
+  gap: 2px;
+  align-content: start;
+  margin-top: 1%;
+  height: calc(100vh - 60px);
+}
+body main .icon {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+body main .icon-img {
+  width: 40px;
+  height: 40px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+body main .icon-text {
+  margin-top: 6px;
+  font-size: 14px;
+  text-align: center;
+  color: white;
+}
+body main .icon:hover {
+  background: rgba(255, 255, 255, 0.195);
+}
+body main .icon:active {
+  background: rgba(255, 255, 255, 0.25);
+}
+body main .taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+}
+body main .box {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 0 15px;
+}
+body main {
+  /* Weather */
+}
+body main .weather {
+  gap: 10px;
+}
+body main .weather img {
+  height: 25px;
+}
+body main {
+  /* Search Section */
+}
+body main .search-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+body main .search {
+  justify-content: center;
+  gap: 15px;
+}
+body main .start-icon {
+  height: 30px;
+  cursor: pointer;
+}
+body main {
+  /* Search Box */
+}
+body main .search-box {
+  display: flex;
+  align-items: center;
+  background: rgba(240, 235, 235, 0.795);
+  border-radius: 50px;
+  padding: 0 10px;
+  height: 35px;
+  width: 300px;
+}
+body main .search-icon {
+  width: 22px;
+  margin-right: 8px;
+  rotate: 270deg;
+}
+body main .search-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  background: transparent;
+  color: rgb(60, 54, 54);
+  letter-spacing: 1px;
+  font-size: larger;
+}
+body main .search-box input::-moz-placeholder {
+  font-weight: 400;
+  color: rgb(59, 11, 11);
+}
+body main .search-box input::placeholder {
+  font-weight: 400;
+  color: rgb(59, 11, 11);
+}
+body main .task-icon img {
+  height: 35px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+body main .task-icon img:hover {
+  transform: scale(1.1);
+}
+body main {
+  /* Right side */
+}
+body main .right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+body main .last-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+body main .last-icons img {
+  height: 30px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 5px;
+  transition: 0.2s ease;
+}
+body main .last-icons img:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+body main .last-icons h3 {
+  font-size: medium;
+  font-weight: 100;
+}
+body main .clock {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  font-size: medium;
+  font-weight: 200;
+  letter-spacing: normal;
+  cursor: pointer;
+  padding: 2px 5px;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+body main .clock:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+body main .context-menu {
+  position: absolute;
+  width: 180px;
+  background: #1f1f1f;
+  border-radius: 8px;
+  display: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+body main .context-menu ul {
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+}
+body main .context-menu li {
+  padding: 10px 15px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+body main .context-menu li:hover {
+  background: #333;
+}
+body main .window {
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  background: #1f1f1f;
+  border-radius: 10px;
+  display: none;
+  top: 100px;
+  left: 200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+body main .title-bar {
+  height: 40px;
+  background: #2b2b2b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  cursor: move;
+  color: white;
+}
+body main .close-btn {
+  background: red;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+body main .window-content {
+  padding: 15px;
+  color: white;
+}/*# sourceMappingURL=style.css.map */

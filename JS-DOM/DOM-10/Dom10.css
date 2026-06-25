@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 1.5%;
+  background: linear-gradient(to top, black, rgb(89, 86, 86), black);
+  overflow: auto;
+}
+main section {
+  height: 100%;
+  width: 33%;
+  background-color: black;
+  border-radius: 15px;
+  margin: auto;
+}
+main section .all-reels::-webkit-scrollbar {
+  display: none;
+}
+main section .all-reels {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+}
+main section .all-reels .reel {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-bottom: 8%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+main section .all-reels .reel .Dil {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: linear-gradient(45deg, rgb(199, 38, 145), rgb(197, 54, 15), rgb(255, 0, 132));
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transform: translate(-50%, -50%) scale(0) rotate(-70deg);
+  transition: all ease-in-out 0.3s;
+  font-size: 6vw;
+  opacity: 0;
+}
+main section .all-reels .reel .mut {
+  background-color: rgb(135, 135, 135);
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  justify-content: center;
+  top: 10px;
+  right: 10px;
+}
+main section .all-reels .reel .mut i {
+  font-size: 2vw;
+  font-weight: 300;
+}
+main section .all-reels .reel .mut:active {
+  scale: 0.8;
+}
+main section .all-reels .reel video {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main section .all-reels .reel .bottom {
+  padding: 1% 6% 8% 6%;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.029), rgba(207, 15, 15, 0.067));
+  position: absolute;
+  bottom: 0;
+  color: azure;
+}
+main section .all-reels .reel .bottom .user {
+  display: flex;
+  align-items: center;
+  gap: 3%;
+  margin-bottom: 1%;
+}
+main section .all-reels .reel .bottom .user h4 {
+  font-size: 1.7vw;
+  font-weight: 600;
+}
+main section .all-reels .reel .bottom .user button {
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 1.2%;
+  border: 2px solid white;
+  cursor: pointer;
+  font-size: 1vw;
+  font-weight: 500;
+  color: rgb(232, 232, 232);
+}
+main section .all-reels .reel .bottom .user img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+main section .all-reels .reel .bottom h3 {
+  font-size: 1vw;
+  font-weight: 200;
+  font-family: Arial, Helvetica, sans-serif;
+}
+main section .all-reels .reel .right {
+  width: 10%;
+  position: absolute;
+  right: 0;
+  bottom: 0%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  padding: 3%;
+  transform: translate(0%);
+  color: white;
+}
+main section .all-reels .reel .right div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main section .all-reels .reel .right div .love {
+  color: crimson;
+}
+main section .all-reels .reel .right div h4 {
+  cursor: pointer;
+  pointer-events: none;
+}
+main section .all-reels .reel .right .icon {
+  font-size: 2vw;
+  font-weight: 100;
+}
+main section .all-reels .reel .right h6 {
+  pointer-events: none;
+  font-size: 0.8vw;
+  font-weight: 100;
+}/*# sourceMappingURL=Dom10.css.map */

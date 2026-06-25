@@ -1,0 +1,115 @@
+@font-face {
+  font-family: Dragon;
+  src: url(./font1/CAMPUS\ PERSONAL\ USE.ttf);
+}
+
+@font-face {
+  font-family: Chhotu;
+  src: url(./font2/CollegiateInsideFLF.ttf);
+}
+
+@font-face {
+  font-family: Comic;
+  src: url(./font3/ComicNeueSansID.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: #000;
+  color: aliceblue;
+}
+
+.Header {
+  height: 150px;
+  width: 100%;
+  background-color: #0b0b0b;
+  justify-items: center;
+  align-items: center;
+}
+
+.Header h1 {
+  font-size: 8vh;
+  font-family: Dragon;
+  font-weight: 200;
+  font-style: uppercase;
+}
+
+.Header h4 {
+  font-size: 3vh;
+  font-family: Chhotu;
+  font-weight: 200;
+  color: #f6f8d5;
+}
+
+.box {
+  position: relative;
+  margin: 0% 12%;
+  min-height: 30vh;       /* ensures a base height but grows with content */
+  background-color: #067680;
+  border-radius: 12px;
+  display: flex;          /* flexbox for alignment */
+  flex-direction: column; /* stack items vertically */
+  align-items: center;    /* center horizontally */
+  justify-content: flex-start; /* content starts from top */
+  margin-bottom: 4%;
+  text-align: center;
+  padding: 20px;          /* space inside */
+  box-sizing: border-box; /* includes padding inside size */
+}
+
+.box h2 {
+  font-size: 4vh;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-bottom: 4px solid black;
+  font-family: Chhotu;
+  font-weight: 200;
+}
+
+.box p {
+  font-size: 3vh;
+  font-family: Comic;
+  font-weight: 300;
+  font-style: normal;
+  color: #f6f8d5;
+  text-align: center;
+  margin-top: 2%;
+}
+
+.edu-box {
+  background: #000000;
+  padding: 15px;
+  margin: 10px auto;
+  max-width: 500px;   /* ✅ limits width but not fixed */
+  width: 90%;         /* ✅ responsive: always fits inside parent */
+  border-radius: 6px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); 
+  font-weight: 500;
+  color: #f6f8d5;
+  font-family: Comic;
+  text-align: center; 
+}
+
+footer {
+  height: 70px;
+  width: 100%;
+  background-color: #067680;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer h4 {
+  font-size: 2vh;
+  font-family: Chhotu;
+  font-weight: 200;
+  color: #f6f8d5; 
+}

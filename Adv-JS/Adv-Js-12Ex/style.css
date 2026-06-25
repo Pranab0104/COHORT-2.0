@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("https://i.pinimg.com/736x/52/c0/96/52c09689f955c4f8d1c10403e9eb3c99.jpg");
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  width: 400px;
+  text-align: center;
+  border: 3px solid beige;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+.container:hover {
+  box-shadow: 20px 20px 30px 10px black;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-bottom: 1rem;
+  color: #000000;
+  letter-spacing: 2px;
+  font-weight: 700;
+  -webkit-text-decoration: underline double #161616;
+          text-decoration: underline double #161616;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+.search-box input {
+  font-family: cursive;
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #ffffff;
+}
+.search-box input:hover {
+  scale: 1.04;
+  border: 2px solid #000000;
+}
+.search-box button {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 8px;
+  background: rgb(26, 100, 111);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: "Courier New", Courier, monospace;
+  border: 2px solid black;
+}
+.search-box button:hover {
+  scale: 1.2;
+  border: 2px solid beige;
+  background: black;
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 15px;
+  background: beige;
+  margin-top: 1rem;
+  transition: 0.3s ease;
+  border: 4px solid gray;
+  -webkit-text-decoration: underline #161616;
+          text-decoration: underline #161616;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.card .temp {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.error {
+  margin-top: 1rem;
+  padding: 10px;
+  border-radius: 10px;
+  background: red;
+  color: rgb(11, 10, 10);
+  border: 3px solid #000000;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.hidden {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

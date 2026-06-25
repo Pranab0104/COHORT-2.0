@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font- family: ; */
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(194, 193, 198);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .card {
+  width: 45%;
+  background-color: cadetblue;
+  border-radius: 15px;
+  padding: 8% 3%;
+}
+main .card p {
+  text-align: center;
+  margin-bottom: 3%;
+  font-family: cursive;
+  color: rgb(0, 0, 0);
+}
+main .card p span {
+  font-size: large;
+  font-weight: 500;
+  color: rgb(156, 39, 26);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+main .card .outer {
+  margin-bottom: 5%;
+  height: 10px;
+  width: 100%;
+  border-radius: 50px;
+  background-color: rgb(129, 127, 129);
+}
+main .card .outer .inner {
+  height: 100%;
+  width: 0%;
+  border-radius: 50px;
+  background-color: green;
+}
+main .card .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main .card .bottom h1 {
+  font-size: 40px;
+}
+main .card .bottom button {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  padding: 2%;
+  border-radius: 10px;
+  font-size: large;
+  color: rgb(110, 144, 52);
+  border-color: crimson;
+  background-color: black;
+}
+main .card .bottom button:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: rgb(255, 255, 255);
+  color: black;
+}/*# sourceMappingURL=Dom5.css.map */

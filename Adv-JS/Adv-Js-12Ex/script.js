@@ -1,0 +1,155 @@
+//   # Day 63 — Project Scenarios
+
+// API example (OpenWeatherMap):
+
+// `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`
+
+// ---
+
+// ## Scenario 1 — Weather Dashboard with Error Handling
+
+// Build a small weather dashboard that fetches current weather data from a public weather API (e.g., OpenWeatherMap).
+
+// ### Requirements
+
+// - Make the API request asynchronously using `fetch` with `async/await`.
+// - Handle API request failures (for example, invalid city name) using `try/catch`.
+// - Create and throw custom errors based on weather conditions (e.g., extremely high or low temperature) and handle them appropriately.
+
+// ### Suggested tasks
+
+// - Build a simple UI to input a city name and display the result.
+// - Show user-friendly error messages for network errors, invalid input, or API errors.
+// - Demonstrate at least one custom thrown error (e.g., `ExtremeTemperatureError`) and handle it in the UI.
+
+// ---
+
+// ## Scenario 2 — Bulk Email Sending Simulation with Parallel Promises and Error Handling
+
+// Simulate sending bulk emails to 5 users. Treat each email-sending operation as a `Promise` (simulate delays with `setTimeout`).
+
+// ### Requirements
+
+// - Send all emails in parallel using `Promise.all`.
+// - If any email fails (e.g., due to a simulated random failure), catch the error and clearly indicate which specific email failed.
+// - Use a `finally` block to display a message indicating that the "Email process is complete." (regardless of success/failure).
+
+// ### Suggested tasks
+
+// - Create an array of 5 mock email tasks that resolve or reject based on a random condition.
+// - Call `Promise.all` and handle success and failure cases. Show a breakdown of which emails succeeded and which failed.
+// - Ensure the `finally` block runs to update the UI or console indicating completion.
+
+// ---
+
+// Optional: combine both scenarios into a small dashboard that fetches weather and then attempts to send a report-email, demonstrating error handling across both network and simulated async operations.
+
+//Problem 1 begins......
+
+// let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`;
+
+//My code for the console only...
+// async function getWeather(city) {
+//   try {
+//     let apikey = `e96047fb627e53cae3c7302d7ee731a0`;
+
+//     let raw = await fetch(
+//       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`,
+//     );
+
+//     if (!raw.ok) {
+//       throw new Error("Something went wrong... City not Found!");
+//     }
+
+//     let realdata = await raw.json();
+//     if (realdata.main.temp <= 15) {
+//       console.warn(`It's Cold Out there... ${realdata.main.temp}°C 🥶`);
+//     } else if (realdata.main.temp >= 35) {
+//       console.warn(`It's Hot Out there... ${realdata.main.temp}°C 🥵`);
+//     } else {
+//       console.log(`Weather is Normal... ${realdata.main.temp}°C 🙂`);
+//     }
+
+//     // console.log(raw);
+//   } catch (err) {
+//     console.log(err.message);
+//   }
+// }
+
+// getWeather("Dudinka");
+
+
+//full code for the UI...
+class ExtremeTemperatureError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "ExtremeTemperatureError";
+  }
+}
+
+const cityInput = document.getElementById("cityInput");
+const searchBtn = document.getElementById("searchBtn");
+const weatherCard = document.getElementById("weatherCard");
+const cityName = document.getElementById("cityName");
+const temperature = document.getElementById("temperature");
+const condition = document.getElementById("condition");
+const errorBox = document.getElementById("errorBox");
+
+async function getWeather(city) {
+  try {
+    let apikey = `e96047fb627e53cae3c7302d7ee731a0`;
+
+    let raw = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`
+    );
+
+    if (!raw.ok) {
+      throw new Error(" Enter a Valid City name OR City not Found!");
+    }
+
+    let realdata = await raw.json();
+    let temp = realdata.main.temp;
+
+    // Custom Extreme Temperature Error
+    if (temp <= 0) {
+      throw new ExtremeTemperatureError(
+        `Extreme Cold Alert ❄ ${temp}°C`
+      );
+    } else if (temp >= 45) {
+      throw new ExtremeTemperatureError(
+        `Extreme Heat Alert 🔥 ${temp}°C`
+      );
+    }
+
+    // Normal Conditions Handling
+    weatherCard.classList.remove("hidden");
+    errorBox.classList.add("hidden");
+
+    cityName.textContent = realdata.name;
+    temperature.textContent = `${temp}°C`;
+
+    if (temp <= 15) {
+      condition.textContent = "It's so Cold Out there 🥶";
+    } else if (temp >= 35) {
+      condition.textContent = "It's too Hot Out there 🥵";
+    } else {
+      condition.textContent = "Weather is Normal 😁";
+    }
+
+  } catch (err) {
+    weatherCard.classList.add("hidden");
+    errorBox.classList.remove("hidden");
+    errorBox.textContent = err.message;
+  }
+}
+
+searchBtn.addEventListener("click", () => {
+  const city = cityInput.value.trim();
+  if (!city) {
+    errorBox.classList.remove("hidden");
+    errorBox.textContent = "Please enter a city name!";
+    weatherCard.classList.add("hidden");
+    return;
+  }
+  getWeather(city);
+});
