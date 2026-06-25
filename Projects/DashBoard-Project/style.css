@@ -3,6 +3,15 @@
   --sec: #dcc3aa;
   --tri: #541a1a;
   --font: #810b38;
+  --black: #000000;
+}
+
+.dark-theme {
+  --primary: #18181b;
+  --sec: #27272a;
+  --tri: #f4ebd0;
+  --font: #d4a017;
+  --black: #fafafa;
 }
 
 @font-face {
@@ -29,7 +38,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: beige;
+  color: var(--sec);
 }
 
 html,
@@ -78,7 +87,7 @@ nav .theme {
   font-size: 100%;
   border-radius: 50%;
   padding: 0.5%;
-  background-color: #000000;
+  background-color: var(--black);
   position: absolute;
   top: 6%;
   right: 3%;
@@ -91,6 +100,14 @@ nav .theme:hover {
 }
 nav .theme:active {
   scale: 0.8;
+}
+
+.dark-theme .elem {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.dark-theme .line {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.45);
 }
 
 section.allelem {
@@ -194,7 +211,7 @@ header .header2 h3 {
   background-color: var(--primary);
   cursor: pointer;
   transform: scale(1.05);
-  box-shadow: 10px 20px 20px black;
+  box-shadow: 0 10px 30px rgba(212, 160, 23, 0.25);
   font-family: hand;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
@@ -232,11 +249,11 @@ header .header2 h3 {
   min-height: 100%;
   width: 100%;
   overflow: hidden;
-  border: 2px solid black;
+  border: 2px solid var(--black);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 10px 20px black;
+  box-shadow: 0px 10px 20px var(--black);
 }
 
 .fullelem h3 {
@@ -249,7 +266,7 @@ header .header2 h3 {
   font-family: hand;
   text-transform: capitalize;
   font-weight: 200;
-  text-shadow: 0px 2px 4px #000000;
+  text-shadow: 0px 2px 4px var(--black);
 }
 
 .back {
@@ -264,14 +281,14 @@ header .header2 h3 {
   padding: 1%;
   letter-spacing: 1.3px;
   color: var(--font);
-  text-shadow: 1px 1px #000000;
-  box-shadow: 3px 2px 3px black;
+  text-shadow: 1px 1px var(--black);
+  box-shadow: 3px 2px 3px var(--black);
 }
 .back:hover {
   cursor: pointer;
   letter-spacing: 2px;
   font-size: 2vh;
-  background-color: #000000;
+  background-color: var(--black);
   color: var(--sec);
   transition: all ease 0.4s;
   box-shadow: 3px 2px 3px rgb(170, 143, 143);
@@ -293,7 +310,7 @@ header .header2 h3 {
 
 .todo-page .todo-container .addTask {
   flex: 4;
-  border: 3px solid black;
+  border: 3px solid var(--black);
   box-shadow: 5px 13px 15px rgb(0, 0, 0);
   border-radius: 15px;
   background-color: var(--primary);
@@ -314,7 +331,7 @@ header .header2 h3 {
   border: none;
   margin: 3% 0%;
   border-radius: 15px;
-  background-color: black;
+  background-color: var(--black);
   color: var(--primary);
   font-weight: 500;
   outline: none;
@@ -334,7 +351,7 @@ header .header2 h3 {
   font-weight: 500;
   outline: none;
   width: 100%;
-  box-shadow: 3px 8px 10px black;
+  box-shadow: 3px 8px 10px var(--black);
 }
 
 .todo-container .addTask form button {
@@ -349,14 +366,14 @@ header .header2 h3 {
   margin: 3% 0%;
   letter-spacing: 1.3px;
   color: var(--font);
-  text-shadow: 1px 1px #000000;
-  box-shadow: 3px 2px 3px black;
+  text-shadow: 1px 1px var(--black);
+  box-shadow: 3px 2px 3px var(--black);
 }
 .todo-container .addTask form button:hover {
   cursor: pointer;
   letter-spacing: 2px;
   font-size: 2vh;
-  background-color: #000000;
+  background-color: var(--black);
   color: var(--sec);
   transition: all ease 0.4s;
   box-shadow: 3px 2px 3px rgb(170, 143, 143);
@@ -364,7 +381,7 @@ header .header2 h3 {
 
 .todo-page .todo-container .allTask {
   border-radius: 15px;
-  border: 3px solid black;
+  border: 3px solid var(--black);
   box-shadow: 5px 13px 15px rgb(0, 0, 0);
   flex: 6;
   overflow: auto;
@@ -416,7 +433,7 @@ header .header2 h3 {
   font-size: 2vh;
   font-weight: 100;
   background-color: var(--primary);
-  color: #000000;
+  color: var(--black);
   padding: 1%;
   letter-spacing: 1.5px;
   border-radius: 15px 0px;
@@ -425,7 +442,7 @@ header .header2 h3 {
   cursor: pointer;
   letter-spacing: 2px;
   font-size: 2vh;
-  background-color: #000000;
+  background-color: var(--black);
   color: var(--sec);
   transition: all ease 0.4s;
   box-shadow: 3px 2px 3px rgb(170, 143, 143);
@@ -446,7 +463,7 @@ form .mark {
 }
 
 form .mark label {
-  color: #000000;
+  color: var(--black);
   font-family: petemoss;
   font-size: 3vh;
   font-weight: 500;
@@ -490,7 +507,7 @@ form .mark label {
   border-radius: 5px;
   border: none;
   font-family: light;
-  color: #000000;
+  color: var(--black);
   font-size: 2.4vh;
   padding-top: 3%;
 }
@@ -509,11 +526,11 @@ form .mark label {
 
 .motivational-page .motivational-container {
   height: 350px;
-  margin-top: 4%;
+  margin-top: 3%;
   width: 700px;
   position: absolute;
   background-color: var(--sec);
-  border-radius: 50px;
+  border-radius: 15px;
   transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
@@ -521,23 +538,24 @@ form .mark label {
 
 .motivational-page .motivational-container::after {
   content: "";
-  background-color: #810b38;
+  background-color: transparent;
   position: absolute;
   height: 100%;
   width: 100%;
-  border-radius: 50px;
+  border-radius: 15px;
   scale: 1.2;
   filter: blur(8px);
   z-index: 8;
 }
 
 .motivational-page .motivational-container .motivational-wrapper {
-  background-color: var(--sec);
+  background-color: transparent;
   position: absolute;
+  height: 100%;
   box-shadow: 15px 25px 20px rgb(49, 7, 16);
   width: 100%;
   padding: 2%;
-  border-radius: 20px;
+  border-radius: 15px;
   z-index: 10;
 }
 
@@ -577,7 +595,7 @@ form .mark label {
 .motivational-wrapper .moti-3 h4 {
   font-size: 5vh;
   font-weight: 200;
-  color: black;
+  color: var(--black);
   font-family: petemoss;
   text-align: right;
 }
@@ -611,7 +629,7 @@ form .mark label {
 
 .pomo button {
   font-size: 2.4vh;
-  background-color: black;
+  background-color: var(--black);
   border-radius: 10px;
   padding: 2% 3%;
   border: none;
@@ -625,7 +643,7 @@ form .mark label {
   background-color: var(--sec);
   color: var(--font);
   scale: 1;
-  box-shadow: 5px 8px 4px black;
+  box-shadow: 5px 8px 4px var(--black);
   transition: all ease-in-out 0.2s;
 }
 
