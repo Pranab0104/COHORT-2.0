@@ -1,4 +1,6 @@
 import React from "react";
+import { RiMapPin2Fill, RiPhoneFill, RiMailFill } from "react-icons/ri";
+import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -31,9 +33,27 @@ const Footer = () => {
             </div>
             <div className="one">
               <h4>Contact</h4>
-              <h5></h5>
-              <h5></h5>
-              <h5></h5>
+
+              <div className="contactItem">
+                <RiMapPin2Fill className="icon" />
+                <span>Nagpur, Maharashtra</span>
+              </div>
+
+              <div className="contactItem">
+                <RiPhoneFill className="icon" />
+                <span>+91 98765 43210</span>
+              </div>
+
+              <div className="contactItem">
+                <RiMailFill className="icon" />
+                <span>hello@crustique.com</span>
+              </div>
+
+              <div className="socialIcons">
+                <FaInstagram />
+                <FaFacebook />
+                <FaLinkedin />
+              </div>
             </div>
           </div>
         </div>
