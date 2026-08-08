@@ -3,11 +3,13 @@ import React from "react";
 const Contact = () => {
   return (
     <div className="contact">
-      <h1>Baked for Every Special Moment !</h1>
+      <h1>We'd Love to Hear From You !</h1>
 
       <p>
-        " Whether it's your morning coffee or life's biggest celebrations, every
-        bake is made to create memories. ".
+        " Every memorable celebration begins with a conversation. Whether you're
+        ordering handcrafted pastries, planning a custom cake, or simply have a
+        question, we'd love to hear from you. Share your ideas, and let's bake
+        something unforgettable together. "
       </p>
       <div className="conta">
         <div className="Card">
