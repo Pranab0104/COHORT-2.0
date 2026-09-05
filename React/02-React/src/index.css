@@ -1,0 +1,1214 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap");
+@font-face {
+  font-family: "Jungle";
+  src: url("./assets/fonts/Jungle.otf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fortune";
+  src: url("./assets/fonts/Fortune.ttf") format("truetype");
+  /* font-weight: 900; */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Scary";
+  src: url("./assets/fonts/Scary.ttf") format("truetype");
+  /* font-weight: 600; */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Game";
+  src: url("./assets/fonts/Squids.ttf") format("truetype");
+  /* font-weight: 600; */
+  font-style: normal;
+}
+
+:root {
+  /* Primary Colors */
+  --primary: #1a5455;
+  --primary-light: #e3c98a;
+  --secondary: #3e4935;
+  --accent: #d97b4a;
+
+  /* Background */
+  --bg: #0d0d0b;
+  --surface: #171713;
+
+  /* Text */
+  --heading: #f4efe3;
+  --text: #c8c3b7;
+  --text-light: #8f8b80;
+
+  /* Border */
+  --border: rgb(202, 198, 191);
+
+  /* Effects */
+  --dow: 0px 5px 25px rgb(0, 0, 0);
+  --shadow: 0 5px 25px rgb(188, 193, 186);
+  --radius: 15px;
+  --transition: all 0.2s ease-in;
+}
+
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font- family: ; */
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--bg);
+  color: antiquewhite;
+  scroll-behavior: smooth;
+}
+
+/* NAvbar start from here */
+
+nav {
+  padding: 1%;
+  border: 2px solid var(--heading);
+  border-radius: var(--radius);
+  transition:
+    background- 0.3s ease,
+    backdrop-filter 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Navigation hover */
+nav:hover {
+  background: rgba(20, 25, 18, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: var(--shadow);
+}
+
+nav .logo {
+  font-family: jungle;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 2rem;
+
+  font-family: game;
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+nav .nav-links a {
+  cursor: pointer;
+  color: var(--text);
+  transition:
+    color 0.3s ease,
+    text-decoration-color 0.3s ease;
+}
+
+nav .nav-links a:hover {
+  color: var(--heading);
+}
+
+/* Home starts from here. */
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3%;
+  box-sizing: border-box;
+}
+
+.home .outer-home {
+  border: 3px solid var(--border);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--border);
+}
+
+.home .inner-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.inner-home h1 {
+  font-size: 8vh;
+  font-family: Jungle;
+  margin-bottom: 1%;
+  color: var(--text);
+  letter-spacing: 2px;
+}
+
+.inner-home h2 {
+  font-size: 8vh;
+  font-family: Jungle;
+  margin-bottom: 1%;
+  color: var(--text-light);
+  letter-spacing: 2px;
+}
+
+.inner-home p {
+  position: absolute;
+  bottom: 8%;
+  width: 70%;
+  padding: 1.5%;
+  border-radius: var(--radius);
+  border: 2px solid var(--border);
+  background-color: #0d0d0b;
+  margin: 2% 0%;
+  font-size: 2.5vh;
+  font-family: scary;
+  color: var(--accent);
+  letter-spacing: 1px;
+  line-height: 1.2;
+  font-weight: 300;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.inner-home h3 {
+  position: absolute;
+  bottom: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 3vh;
+  font-family: game;
+  color: var(--text);
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+
+.inner-home h3 > i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.inner-home h3:hover {
+  color: var(--accent);
+  background-color: var(--bg);
+  box-shadow: var(--shadow);
+  padding: 0% 3%;
+  border: 2px solid var(--heading);
+  border-radius: var(--radius);
+}
+
+.inner-home h3:hover > i {
+  cursor: pointer;
+  transform: rotate(-45deg);
+  color: var(--text);
+}
+
+/* Animals page starts from here */
+
+.sect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: auto 2%;
+  box-sizing: border-box;
+}
+
+.sect h1 {
+  color: var(--text);
+  margin-bottom: 1.2%;
+  font-family: jungle;
+  letter-spacing: 3px;
+}
+
+.sect h3 {
+  color: var(--text);
+  margin-bottom: 1.2%;
+  font-family: jungle;
+  letter-spacing: 3px;
+}
+
+.sect p {
+  position: relative;
+  width: 60%;
+  margin-bottom: 1.2%;
+  padding: 1% 1.2%;
+  border-radius: var(--radius);
+  border: 2px solid var(--border);
+  background-color: #0d0d0b;
+  font-family: game;
+  color: var(--accent);
+  letter-spacing: 1px;
+  line-height: 1.2;
+  font-weight: 300;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.sect .upper {
+  font-size: 1rem;
+  font-family: game;
+  line-height: 1.4;
+  width: 70%;
+  color: var(--accent);
+}
+
+.sect .lower {
+  font-size: 1rem;
+  font-family: scary;
+  width: 50%;
+  color: var(--text-light);
+}
+
+.sect .container {
+  width: 90%;
+  min-height: 450px;
+  margin: auto 2%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--border);
+  padding: 1.2rem;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.323);
+}
+
+.sect .box {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1.5px solid var(--accent);
+  border-radius: calc(var(--radius) * 0.8);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95),
+    rgba(0, 0, 0, 0.45) 45%,
+    rgba(0, 0, 0, 0.05)
+  );
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease,
+    opacity 0.5s ease,
+    border-color 0.5s ease;
+}
+
+.sect #box1 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.148), rgba(0, 0, 0, 0.196)),
+    url("/images/Big.jpg");
+}
+
+.sect #box2 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.15)),
+    url("/images/Hunters.jpg");
+}
+
+.sect #box3 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.15)),
+    url("/images/intelle.jpg");
+}
+
+.sect #box4 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.15)),
+    url("/images/Giants.jpg");
+}
+
+.sect .box span {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  font-family: game;
+  text-decoration: underline 2px solid var(--heading);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: var(--accent);
+}
+
+.sect .box h4 {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 0.5rem;
+  font-family: jungle;
+  font-size: clamp(1.8rem, 2.5vw, 3rem);
+  letter-spacing: 2px;
+  color: var(--text);
+}
+
+.sect .box p {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.sect .box i {
+  position: absolute;
+  right: 1.3rem;
+  bottom: 1.3rem;
+  z-index: 2;
+  font-size: 1.4rem;
+  font-style: normal;
+  color: var(--text);
+  transition: transform 0.4s ease;
+}
+
+.sect .container:hover .box:not(:hover) {
+  filter: blur(2px);
+  opacity: 0.96;
+  transform: scale(0.85);
+}
+
+/* Highlight the card being hovered */
+.sect .box:hover {
+  z-index: 5;
+  transform: scale(1.04);
+  filter: blur(0);
+  opacity: 1;
+  border-color: var(--accent);
+}
+
+/* Move and rotate the arrow */
+.sect .box:hover i {
+  transform: translate(4px, -8px) rotate(45deg);
+}
+
+@media (max-width: 1000px) {
+  .sect .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .sect .container {
+    grid-template-columns: 1fr;
+    width: 88%;
+  }
+
+  .sect .box {
+    min-height: 360px;
+  }
+}
+
+/* Reptiles page starts from here */
+
+.sec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: auto 2%;
+  box-sizing: border-box;
+}
+
+.sec h1 {
+  color: var(--text);
+  margin-bottom: 1.2%;
+  font-family: jungle;
+  letter-spacing: 3px;
+}
+
+.sec h3 {
+  color: var(--text);
+  margin-bottom: 1.2%;
+  font-family: jungle;
+  letter-spacing: 3px;
+}
+
+.sec p {
+  position: relative;
+  width: 60%;
+  margin-bottom: 1.2%;
+  padding: 1% 1.2%;
+  border-radius: var(--radius);
+  border: 2px solid var(--border);
+  background-color: #0d0d0b;
+  font-family: game;
+  color: var(--accent);
+  letter-spacing: 1px;
+  line-height: 1.2;
+  font-weight: 300;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.sec .top {
+  font-size: 1rem;
+  font-family: game;
+  line-height: 1.4;
+  width: 70%;
+  color: var(--accent);
+}
+
+.sec .down {
+  font-size: 1rem;
+  font-family: scary;
+  width: 50%;
+  color: var(--text-light);
+}
+
+.sec .container {
+  width: 90%;
+  min-height: 450px;
+  margin: auto 2%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--border);
+  padding: 1.2rem;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.323);
+}
+
+.sec .boxes {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1.5px solid var(--accent);
+  border-radius: calc(var(--radius) * 0.8);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95),
+    rgba(0, 0, 0, 0.45) 45%,
+    rgba(0, 0, 0, 0.05)
+  );
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease,
+    opacity 0.5s ease,
+    border-color 0.5s ease;
+}
+
+.sec #box1 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.148), rgba(0, 0, 0, 0.196)),
+    url("/images/Snakes.jpg");
+}
+
+.sec #box2 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.15)),
+    url("/images/Crocodiles.jpg");
+}
+
+.sec #box3 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.15)),
+    url("/images/Lizards.jpg");
+}
+
+.sec #box4 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.15)),
+    url("/images/Turtles.jpg");
+}
+
+.sec .boxes span {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  font-family: game;
+  text-decoration: underline 2px solid var(--heading);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: var(--accent);
+}
+
+.sec .boxes h4 {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 0.5rem;
+  font-family: jungle;
+  font-size: clamp(1.8rem, 2.5vw, 3rem);
+  letter-spacing: 2px;
+  color: var(--text);
+}
+
+.sec .boxes p {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.sec .boxes i {
+  position: absolute;
+  right: 1.3rem;
+  bottom: 1.3rem;
+  z-index: 2;
+  font-size: 1.4rem;
+  font-style: normal;
+  color: var(--text);
+  transition: transform 0.4s ease;
+}
+
+.sec .container:hover .boxes:not(:hover) {
+  filter: blur(2px);
+  opacity: 0.96;
+  transform: scale(0.85);
+}
+
+/* Highlight the card being hovered */
+.sec .boxes:hover {
+  z-index: 5;
+  transform: scale(1.04);
+  filter: blur(0);
+  opacity: 1;
+  border-color: var(--accent);
+}
+
+/* Move and rotate the arrow */
+.sec .boxes:hover i {
+  transform: translate(4px, -8px) rotate(45deg);
+}
+
+@media (max-width: 1000px) {
+  .sec .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .sec .container {
+    grid-template-columns: 1fr;
+    width: 88%;
+  }
+
+  .sec .boxes {
+    min-height: 360px;
+  }
+}
+
+/* Birds page starts from here */
+
+.bird {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: auto 2%;
+  box-sizing: border-box;
+}
+
+.bird h1 {
+  color: var(--bg);
+  margin-bottom: 1.2%;
+  font-family: jungle;
+  letter-spacing: 3px;
+}
+
+.bird h3 {
+  color: var(--secondary);
+  margin-bottom: 1.2%;
+  font-family: jungle;
+  letter-spacing: 3px;
+}
+
+.bird p {
+  position: relative;
+  width: 60%;
+  margin-bottom: 1.2%;
+  padding: 1% 1.2%;
+  border-radius: var(--radius);
+  border: 2px solid var(--border);
+  background-color: var(--text);
+  font-family: game;
+  color: var(--accent);
+  letter-spacing: 1px;
+  line-height: 1.2;
+  font-weight: 300;
+  text-align: center;
+  box-shadow: var(--dow);
+}
+
+.bird .up {
+  font-size: 1rem;
+  font-family: game;
+  line-height: 1.4;
+  width: 70%;
+  color: var(--primary);
+}
+
+.bird .below {
+  font-size: 1rem;
+  font-family: scary;
+  width: 50%;
+  color: var(--text-light);
+}
+
+.bird .container {
+  width: 90%;
+  min-height: 450px;
+  margin: auto 2%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--text);
+  padding: 1.2rem;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.323);
+}
+
+.bird .boxee {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1.5px solid var(--heading);
+  border-radius: calc(var(--radius) * 0.8);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95),
+    rgba(0, 0, 0, 0.45) 45%,
+    rgba(0, 0, 0, 0.05)
+  );
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease,
+    opacity 0.5s ease,
+    border-color 0.5s ease;
+}
+
+.bird #box1 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    url("/images/Raptors.jpg");
+}
+
+.bird #box2 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0)),
+    url("/images/Songbird.jpg");
+}
+
+.bird #box3 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0)),
+    url("/images/waterfowl.jpg");
+}
+
+.bird #box4 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0)),
+    url("/images/Exotic.jpg");
+}
+
+.bird .boxee span {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  font-family: game;
+  text-decoration: underline 2px solid var(--accent);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: var(--heading);
+}
+
+.bird .boxee h4 {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 0.5rem;
+  font-family: jungle;
+  font-size: clamp(1.8rem, 2.5vw, 3rem);
+  letter-spacing: 2px;
+  color: var(--text);
+}
+
+.bird .boxee p {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.bird .boxee i {
+  position: absolute;
+  right: 1.3rem;
+  bottom: 1.3rem;
+  z-index: 2;
+  font-size: 1.4rem;
+  font-style: normal;
+  color: var(--text);
+  transition: transform 0.4s ease;
+}
+
+.bird .container:hover .boxee:not(:hover) {
+  filter: blur(2px);
+  opacity: 0.96;
+  transform: scale(0.85);
+}
+
+/* Highlight the card being hovered */
+.bird .boxee:hover {
+  z-index: 5;
+  transform: scale(1.04);
+  filter: blur(0);
+  opacity: 1;
+  border-color: var(--accent);
+}
+
+/* Move and rotate the arrow */
+.bird .boxee:hover i {
+  transform: translate(4px, -8px) rotate(45deg);
+}
+
+@media (max-width: 1000px) {
+  .bird .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .bird .container {
+    grid-template-columns: 1fr;
+    width: 88%;
+  }
+
+  .bird .boxee {
+    min-height: 360px;
+  }
+}
+
+/* Marine page starts from here */
+
+.ocean {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: auto 2%;
+  box-sizing: border-box;
+}
+
+.ocean h1 {
+  color: var(--text);
+  margin-bottom: 1.2%;
+  font-family: jungle;
+  letter-spacing: 3px;
+}
+
+.ocean h3 {
+  color: var(--secondary);
+  margin-bottom: 1.2%;
+  font-family: jungle;
+  letter-spacing: 3px;
+}
+
+.ocean p {
+  position: relative;
+  width: 60%;
+  margin-bottom: 1.2%;
+  padding: 1% 1.2%;
+  border-radius: var(--radius);
+  border: 2px solid var(--border);
+  background-color: var(--text);
+  font-family: game;
+  color: var(--accent);
+  letter-spacing: 1px;
+  line-height: 1.2;
+  font-weight: 300;
+  text-align: center;
+  box-shadow: var(--dow);
+}
+
+.ocean .first {
+  font-size: 1rem;
+  font-family: game;
+  line-height: 1.4;
+  width: 70%;
+  color: var(--primary);
+}
+
+.ocean .second {
+  font-size: 1rem;
+  font-family: scary;
+  width: 50%;
+  color: var(--primary);
+}
+
+.ocean .container {
+  width: 90%;
+  min-height: 450px;
+  margin: auto 2%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--text);
+  padding: 1.2rem;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.323);
+}
+
+.ocean .baxa {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1.5px solid var(--heading);
+  border-radius: calc(var(--radius) * 0.8);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95),
+    rgba(0, 0, 0, 0.45) 45%,
+    rgba(0, 0, 0, 0.05)
+  );
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease,
+    opacity 0.5s ease,
+    border-color 0.5s ease;
+}
+
+.ocean #box1 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    url("/images/OCgiants.jpg");
+}
+
+.ocean #box2 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0)),
+    url("/images/Chain.jpg");
+}
+
+.ocean #box3 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0)),
+    url("/images/sea.jpg");
+}
+
+.ocean #box4 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0)),
+    url("/images/sqd.jpg");
+}
+
+.ocean .baxa span {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  font-family: game;
+  text-decoration: underline 2px solid var(--accent);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: var(--heading);
+}
+
+.ocean .baxa h4 {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 0.5rem;
+  font-family: jungle;
+  font-size: clamp(1.8rem, 2.5vw, 3rem);
+  letter-spacing: 2px;
+  color: var(--text);
+}
+
+.ocean .baxa p {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.ocean .baxa i {
+  position: absolute;
+  right: 1.3rem;
+  bottom: 1.3rem;
+  z-index: 2;
+  font-size: 1.4rem;
+  font-style: normal;
+  color: var(--text);
+  transition: transform 0.4s ease;
+}
+
+.ocean .container:hover .baxa:not(:hover) {
+  filter: blur(2px);
+  opacity: 0.96;
+  transform: scale(0.85);
+}
+
+/* Highlight the card being hovered */
+.ocean .baxa:hover {
+  z-index: 5;
+  transform: scale(1.04);
+  filter: blur(0);
+  opacity: 1;
+  border-color: var(--accent);
+}
+
+/* Move and rotate the arrow */
+.ocean .baxa:hover i {
+  transform: translate(4px, -8px) rotate(45deg);
+}
+
+@media (max-width: 1000px) {
+  .ocean .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .ocean .container {
+    grid-template-columns: 1fr;
+    width: 88%;
+  }
+
+  .ocean .baxa {
+    min-height: 360px;
+  }
+}
+
+/* Bigcats page starts from here */
+
+.cat {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2%;
+  box-sizing: border-box;
+}
+
+/* Page Heading */
+
+.cat h1 {
+  margin-bottom: 1.2%;
+  color: var(--text);
+  font-family: jungle;
+  letter-spacing: 3px;
+}
+
+/* Intro Paragraph */
+
+.cat .upp {
+  width: 70%;
+  margin-bottom: 1.2%;
+  padding: 1% 1.2%;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: #0d0d0b;
+  box-shadow: var(--shadow);
+  color: var(--accent);
+  font-family: game;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Card Container */
+
+.cat .container {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  padding: 1.2rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0.323);
+  backdrop-filter: blur(4px);
+}
+
+/* Cards */
+.cat .box {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  overflow: hidden;
+  border: 1.5px solid var(--accent);
+  border-radius: calc(var(--radius) * 0.8);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease,
+    opacity 0.5s ease,
+    border-color 0.5s ease;
+}
+
+.cat #box1 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.15)),
+    url("/images/Lion.jpg");
+}
+
+.cat #box2 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.15)),
+    url("/images/Tiger.jpg");
+}
+
+.cat #box3 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.15)),
+    url("/images/Leopard.jpg");
+}
+
+.cat #box4 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.15)),
+    url("/images/Jaguar.jpg");
+}
+
+.cat #box5 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.15)),
+    url("/images/Cheetah.jpg");
+}
+
+.cat #box6 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.15)),
+    url("/images/Snowleopard.jpg");
+}
+
+.cat #box7 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.15)),
+    url("/images/Cougar.jpg");
+}
+
+.cat #box8 {
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.15)),
+    url("/images/Lynx.jpg");
+}
+
+.cat .box span {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  color: var(--text);
+  font-family: game;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-decoration: underline 2px solid var(--accent);
+}
+
+.cat .box h4 {
+  margin: 0 0 0.5rem;
+  color: var(--text);
+  font-family: jungle;
+  font-size: clamp(1.8rem, 2.5vw, 3rem);
+  letter-spacing: 2px;
+}
+
+.cat .box p {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  color: var(--accent);
+  font-family: game;
+  text-align: center;
+}
+
+.cat .box i {
+  position: absolute;
+  right: 1.3rem;
+  bottom: 1.3rem;
+  color: var(--text);
+  font-size: 1.4rem;
+  font-style: normal;
+  transition: transform 0.4s ease;
+}
+
+.cat .container:hover .box:not(:hover) {
+  filter: blur(2px);
+  opacity: 0.96;
+  transform: scale(0.85);
+}
+
+.cat .box:hover {
+  z-index: 5;
+  transform: scale(1.04);
+  border-color: var(--accent);
+}
+
+.cat .box:hover i {
+  transform: translate(4px, -8px) rotate(45deg);
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .cat .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cat .container {
+    width: 88%;
+    grid-template-columns: 1fr;
+  }
+
+  .cat .box {
+    min-height: 360px;
+  }
+}
