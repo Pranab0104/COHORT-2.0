@@ -20,7 +20,7 @@ const Giants = () => {
           <span>01</span>
           <h4>ELEPHANT</h4>
           <p>The gentle giant of the land</p>
-          <Link to="/giants/">
+          <Link to="/giants/elephant">
             <i>↗</i>
           </Link>
         </div>
@@ -29,7 +29,7 @@ const Giants = () => {
           <span>02</span>
           <h4>GIRAFFE</h4>
           <p>The tallest wanderer of the savanna</p>
-          <Link to="/giants/">
+          <Link to="/giants/giraffe">
             <i>↗</i>
           </Link>
         </div>
@@ -38,7 +38,7 @@ const Giants = () => {
           <span>03</span>
           <h4>RHINOCEROS</h4>
           <p>An armored force of the wild</p>
-          <Link to="/giants/">
+          <Link to="/giants/rhino">
             <i>↗</i>
           </Link>
         </div>
@@ -47,7 +47,7 @@ const Giants = () => {
           <span>04</span>
           <h4>HIPPOPOTAMUS</h4>
           <p>The river's powerful guardian</p>
-          <Link to="/giants/">
+          <Link to="/giants/hippo">
             <i>↗</i>
           </Link>
         </div>
@@ -56,7 +56,7 @@ const Giants = () => {
           <span>05</span>
           <h4>POLAR BEAR</h4>
           <p>Master of the frozen north</p>
-          <Link to="/giants/">
+          <Link to="/giants/polar">
             <i>↗</i>
           </Link>
         </div>
@@ -65,7 +65,7 @@ const Giants = () => {
           <span>06</span>
           <h4>BISON</h4>
           <p>The mighty giant of the grasslands</p>
-          <Link to="/giants/">
+          <Link to="/giants/bison">
             <i>↗</i>
           </Link>
         </div>
@@ -74,7 +74,7 @@ const Giants = () => {
           <span>07</span>
           <h4>WALRUS</h4>
           <p>The tusked giant of icy waters</p>
-          <Link to="/giants/">
+          <Link to="/giants/walrus">
             <i>↗</i>
           </Link>
         </div>
@@ -83,7 +83,7 @@ const Giants = () => {
           <span>08</span>
           <h4>MOOSE</h4>
           <p>The towering giant of the northern forests</p>
-          <Link to="/giants/">
+          <Link to="/giants/moose">
             <i>↗</i>
           </Link>
         </div>

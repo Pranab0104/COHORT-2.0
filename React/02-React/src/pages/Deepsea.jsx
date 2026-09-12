@@ -20,7 +20,7 @@ const Deepsea = () => {
           <span>01</span>
           <h4>GIANT SQUID</h4>
           <p>The mysterious giant of the deep</p>
-          <Link to="/deepsea/">
+          <Link to="/deepsea/GIANTSQUID">
             <i>↗</i>
           </Link>
         </div>
@@ -29,7 +29,7 @@ const Deepsea = () => {
           <span>02</span>
           <h4>ANGLERFISH</h4>
           <p>The glowing hunter of the darkness</p>
-          <Link to="/deepsea/">
+          <Link to="/deepsea/ANGLERFISH">
             <i>↗</i>
           </Link>
         </div>
@@ -38,7 +38,7 @@ const Deepsea = () => {
           <span>03</span>
           <h4>GOBLIN SHARK</h4>
           <p>The strange predator of the depths</p>
-          <Link to="/deepsea/">
+          <Link to="/deepsea/GOBLINSHARK">
             <i>↗</i>
           </Link>
         </div>
@@ -47,7 +47,7 @@ const Deepsea = () => {
           <span>04</span>
           <h4>VAMPIRE SQUID</h4>
           <p>The elusive drifter of the deep</p>
-          <Link to="/deepsea/">
+          <Link to="/deepsea/VAMPIRESQUID">
             <i>↗</i>
           </Link>
         </div>
@@ -56,7 +56,7 @@ const Deepsea = () => {
           <span>05</span>
           <h4>GIANT ISOPOD</h4>
           <p>The armored scavenger of the seafloor</p>
-          <Link to="/deepsea/">
+          <Link to="/deepsea/GIANTISOPOD">
             <i>↗</i>
           </Link>
         </div>
@@ -65,7 +65,7 @@ const Deepsea = () => {
           <span>06</span>
           <h4>DUMBO OCTOPUS</h4>
           <p>The gentle explorer of the abyss</p>
-          <Link to="/deepsea/">
+          <Link to="/deepsea/DUMBOOCTOPUS">
             <i>↗</i>
           </Link>
         </div>
@@ -74,7 +74,7 @@ const Deepsea = () => {
           <span>07</span>
           <h4>FRILLED SHARK</h4>
           <p>The ancient hunter of deep waters</p>
-          <Link to="/deepsea/">
+          <Link to="/deepsea/FRILLEDSHARK">
             <i>↗</i>
           </Link>
         </div>
@@ -83,7 +83,7 @@ const Deepsea = () => {
           <span>08</span>
           <h4>BARRELEYE FISH</h4>
           <p>The transparent-eyed watcher of the dark</p>
-          <Link to="/deepsea/">
+          <Link to="/deepsea/BARRELEYEFISH">
             <i>↗</i>
           </Link>
         </div>
